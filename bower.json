@@ -1,0 +1,14 @@
+{
+  "name": "Team09",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1"
+  }
+
+}

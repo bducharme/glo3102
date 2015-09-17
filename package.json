@@ -1,0 +1,14 @@
+{
+  "name": "Team09",
+  "version": "0.0.0",
+  "scripts": {
+    "prestart": "npm install && bower install",
+    "start": "gulp"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.5.2",
+    "gulp": "^3.9.0",
+    "gulp-inject": "^2.2.0"
+  }
+}
