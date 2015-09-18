@@ -8,7 +8,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "angular": ">=1.4.*",
+    "bootstrap": "~3.3.5",
+    "angular-ui-router": "~0.2.15"
   }
 
 }
