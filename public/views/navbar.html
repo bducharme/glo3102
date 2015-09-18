@@ -2,5 +2,25 @@
 
 
     <!-- Code here -->
-
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-5 col-sm-5 pull-left" role="search">
+                <form class="navbar-form">
+                    <div class="input-group">
+                        <input type="search" class="form-control" autocorrect="off" ng-model="search" required ng-minlength="3" placeholder="Rechercher...">
+                    </div>
+                </form>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Accueil</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </div>

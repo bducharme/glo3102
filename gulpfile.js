@@ -5,9 +5,13 @@ var inject = require('gulp-inject');
 
 gulp.task('default', function () {
     var target = gulp.src('./public/index.html');
-    var sources = gulp.src(['./public/bower_components/**/*.min.css', './public/css/*.css',
-                            './public/bower_components/angular*/**/*.min.js', './public/app/**/*.js'],
-                            {read: false});
+    var sources = gulp.src(['./public/bower_components/**/*.min.css',
+            './public/css/*.css',
+            './public/bower_components/jquery/dist/**/*.min.js',
+            './public/bower_components/bootstrap/dist/**/*.min.js',
+            './public/bower_components/angular*/**/*.min.js',
+            './public/app/**/*.js'],
+            {read: false});
 
     var injectOptions = {
         ignorePath: 'public',
