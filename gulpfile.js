@@ -10,6 +10,7 @@ gulp.task('default', function () {
             './public/bower_components/jquery/dist/**/*.min.js',
             './public/bower_components/bootstrap/dist/**/*.min.js',
             './public/bower_components/angular*/**/*.min.js',
+            './public/bower_components/bootstrap/fonts/**.*',
             './public/app/**/*.js'],
             {read: false});
 
