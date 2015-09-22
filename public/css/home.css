@@ -1,0 +1,49 @@
+.home-bg {
+  background: rgba(0, 0, 0, 0) url(https://leanflix-production.storage.googleapis.com/production/assets/landing/bg-landing-889bfa48452a0cc4558fe8e4bb13b411.jpg) no-repeat fixed center bottom / cover ;
+}
+
+.container .row {
+  padding-top: 15%;
+}
+
+.btn-primary {
+  background-color: #55b5cd;
+  border-color: #4d9dba;
+}
+
+.btn-primary:hover,
+.btn-primary:active{
+  background-color: #1692b9;
+  border-color: #406480;
+}
+
+.btn-outline {
+  background: transparent none repeat scroll 0 0;
+  border: 2px solid;
+  border-color: #606160;
+  color: #51baa7;
+}
+
+.btn-outline.btn-default:hover,
+.btn-outline.btn-default:active{
+  background: transparent none repeat scroll 0 0;
+  border-color: #bfc5cb;
+  color: #51baa7;
+}
+
+.container .row  h1 {
+  padding-bottom: 20px;
+}
+
+.container .row  h4 {
+  padding-bottom: 20px;
+}
+
+.container .row .btn {
+  margin-right: 20px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 500;
+}
