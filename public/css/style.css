@@ -5,3 +5,18 @@ body {
     padding-left: 50px;
     padding-right: 50px;
 }
+
+.jumbotron p{
+    font-size: 12px;
+    padding: 20px;
+}
+
+.modal-content{
+    border-radius: 0px;
+    background-color: black;
+    box-shadow:0 10px 10px #080808;
+}
+
+#mediaControl{
+    padding: 20px;
+}
