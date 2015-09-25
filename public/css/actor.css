@@ -1,0 +1,39 @@
+.row {
+    width: 1200px;
+}
+
+li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2 {
+   margin-left: 0px;
+}
+
+h3 {
+    margin-left: 60px;
+}
+
+h4 {
+    margin-left: 0px;
+}
+
+.actor-info {
+    width: 214px;
+    position: relative;
+    float: left;
+    border: solid;
+    border-color: #080808;
+
+}
+
+.actor-photo {
+    position: relative;
+}
+
+.movie-list {
+     position: relative;
+     float: left;
+
+ }
