@@ -1,13 +1,5 @@
-body {
-    padding-top: 70px;
-}
-
 .movieTitle{
     margin-top: 0px;
-}
-
-#appleButton {
-    display: inline-block;
 }
 
 #mediaControl {
@@ -16,10 +8,6 @@ body {
 
 .textInJumbotron p{
     font-size: 14px;
-}
-
-.topPage {
-    padding-top: 70px;
 }
 
 .pointedList {
