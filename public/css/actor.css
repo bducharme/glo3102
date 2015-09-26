@@ -1,49 +1,7 @@
-.row {
-}
-
-.actor-column{
-    position: relative;
-    float: left;
-    width: 290px;
-    margin-right: 30px;
-}
-
-.actor-info {
-    width: 214px;
-    position: relative;
-    float: left;
-    border: solid;
-    border-width: thick;
-    border-color: #080808;
-    padding-left: 0;
-    padding-right: 0px;
-
-}
-
 .actor-photo {
     position: relative;
     float: left;
     width: 100%;
-    border-bottom: solid;
-}
-
-.actor-name{
-    float: left;
-    border-bottom: solid;
-    position: relative;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    padding: 5px;
-}
-
-.actor-genre {
-    float: left;
-    position: relative;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    padding: 5px;
 }
 
 .imdb-link {
@@ -52,34 +10,24 @@
     padding-top: 5px;
 }
 
-.movie-column-title {
-    text-align: center;
-}
-
-.serie-column-title {
-    text-align: center;
-}
-
-.movie-column {
-    position: relative;
+.movie-photo{
     float: left;
-    width: 350px;
-    text-align: center;
- }
-
-.serie-column {
-    position: relative;
-    float: left;
-    width: 350px;
-    text-align: center;
 }
 
 .movie-info {
     float: left;
+    padding-left: 15px;
 }
 
+.jumbotronMovieText {
+    margin-bottom: 10px;
+}
+
+
 .movie-list {
-    padding-left: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
 }
 
 .movie-list-element {
