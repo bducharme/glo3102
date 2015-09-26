@@ -1,9 +1,21 @@
+.background-image {
+    position: fixed;
+    background-image: url('https://leanflix-production.storage.googleapis.com/production/assets/landing/bg-landing-889bfa48452a0cc4558fe8e4bb13b411.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
 
 body {
     padding-top: 70px;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 .jumbotron p{
@@ -17,6 +29,6 @@ body {
     box-shadow:0 10px 10px #080808;
 }
 
-#mediaControl{
-    padding: 20px;
+.topPage {
+    padding-top: 70px;
 }
