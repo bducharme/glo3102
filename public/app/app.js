@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cornpub', ['ui.router'])
+angular.module('cornpub', ['ui.router','ui.bootstrap'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home')
         $stateProvider

@@ -9,6 +9,7 @@ gulp.task('default', function () {
             './public/css/*.css',
             './public/bower_components/jquery/dist/**/*.min.js',
             './public/bower_components/bootstrap/dist/**/*.min.js',
+            '!./public/bower_components/angular-bootstrap/ui-bootstrap.min.js',
             './public/bower_components/angular*/**/*.min.js',
             './public/bower_components/bootstrap/fonts/**.*',
             './public/app/**/*.js'],
