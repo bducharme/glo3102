@@ -19,7 +19,7 @@ body {
 }
 
 .jumbotron p{
-    font-size: 12px;
+    font-size: 14px;
     padding: 20px;
 }
 
@@ -31,4 +31,16 @@ body {
 
 .topPage {
     padding-top: 70px;
+}
+
+.appleButton a{
+    float: right;
+    overflow:hidden;
+    background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
+    width:110px;
+    height:40px;
+}
+
+.appleButton {
+    width: 110px;
 }

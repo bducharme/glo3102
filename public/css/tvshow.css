@@ -1,15 +1,3 @@
-.movieTitle{
-    margin-top: 0px;
-}
-
-#mediaControl {
-    min-height: 250px;
-}
-
-.textInJumbotron p{
-    font-size: 14px;
-}
-
 .pointedList {
     margin-left: 0px;
 }
@@ -29,18 +17,6 @@
 
 .pointedList li:last-child:after {
     content: '';
-}
-
-#appleButton a{
-    float: right;
-    overflow:hidden;
-    background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
-    width:110px;
-    height:40px;
-}
-
-#appleButton {
-    width: 110px;
 }
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {

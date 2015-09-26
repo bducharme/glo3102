@@ -2,11 +2,14 @@
 
 <div class="container-fluid">
     <div class="row topPage">
-        <div class="col-md-8 col-xs-12">
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="row">
-                <div class="col-md-6 col-xs-12">
-                    <h1>South Park</h1>
-                    <div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <h1 class="row">South Park</h1>
+
+                    <div class="row">
                         <ul class="list-inline pointedList">
                             <li>Humour</li>
                             <li>2014/09/09</li>
@@ -14,56 +17,56 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div id="previewButton">
-                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myVideoModal">
-                                    Bande annonce
-                                </button>
-                                <div id="myVideoModal" class="modal fade" role="dialog">
-                                    <div class="modal-dialog">
-
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">South Park - Bande Annonce</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/HLtUVBA7V0E" frameborder="0" allowfullscreen></iframe>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                <div id="previewButton" class="col-md-4 col-sm-6 col-xs-12">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+                            data-target="#myVideoModal">
+                        Bande annonce
+                    </button>
+                    <div id="myVideoModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">South Park - Bande Annonce</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe width="100%" height="315"
+                                            src="https://www.youtube.com/embed/HLtUVBA7V0E" frameborder="0"
+                                            allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div id="appleButton">
-                                <a href="https://geo.itunes.apple.com/ca/movie/avengers-age-of-ultron/id983441161?mt=6"></a>
-                            </div>
-                        </div>
                     </div>
+                </div>
+                <div class="appleButton col-md-2 col-sm-6 col-xs-offset-0">
+                    <a href="https://geo.itunes.apple.com/ca/movie/avengers-age-of-ultron/id983441161?mt=6"></a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="jumbotron">
-                        <div class="textInJumbotron">
-                            <p>
-                                The show follows the exploits of four boys, Stan Marsh, Kyle Broflovski, Eric Cartman and Kenny McCormick. The boys live in the fictional small town of South Park, located within the real life South Park basin in the Rocky Mountains of central Colorado. The town is also home to an assortment of frequent characters such as students, families, elementary school staff, and other various residents, who tend to regard South Park as a bland and quiet place to live. Prominent settings on the show include the local elementary school,
-                                bus stop, various neighborhoods and the surrounding snowy landscape, actual Colorado landmarks, and the shops and businesses along the town's main street, all of which are based on the appearance of similar locations in the town of Fairplay, Colorado.
-                            </p>
-                        </div>
+                        <p>
+                            The show follows the exploits of four boys, Stan Marsh, Kyle Broflovski, Eric Cartman
+                            and Kenny McCormick. The boys live in the fictional small town of South Park, located
+                            within the real life South Park basin in the Rocky Mountains of central Colorado. The
+                            town is also home to an assortment of frequent characters such as students, families,
+                            elementary school staff, and other various residents, who tend to regard South Park as a
+                            bland and quiet place to live. Prominent settings on the show include the local
+                            elementary school,
+                            bus stop, various neighborhoods and the surrounding snowy landscape, actual Colorado
+                            landmarks, and the shops and businesses along the town's main street, all of which are
+                            based on the appearance of similar locations in the town of Fairplay, Colorado.
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div ng-controller="AccordionCtrl">
                     <accordion>
-                        <accordion-group is-open="status.open" ng-repeat="season in seasons" >
+                        <accordion-group is-open="status.open" ng-repeat="season in seasons">
                             <accordion-heading>
-                                {{season.number}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                {{season.number}} <i class="pull-right glyphicon"
+                                                     ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                             </accordion-heading>
                             <ul>
                                 <li ng-repeat="episode in season.episodes">
@@ -75,10 +78,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="thumbnail">
                 <img src="http://www.gstatic.com/tv/thumb/tvbanners/184338/p184338_b_v7_ac.jpg">
             </div>
         </div>
     </div>
+</div>
 </div>
