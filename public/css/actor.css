@@ -2,21 +2,22 @@
     width: 1200px;
 }
 
-li {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 h2 {
    margin-left: 0px;
 }
 
 h3 {
-    margin-left: 60px;
+
 }
 
 h4 {
     margin-left: 0px;
+}
+
+.actor-column{
+    position: relative;
+    float: left;
+    width: 300px;
 }
 
 .actor-info {
@@ -24,16 +25,75 @@ h4 {
     position: relative;
     float: left;
     border: solid;
+    border-width: thick;
     border-color: #080808;
+    padding-left: 0;
+    padding-right: 0px;
 
 }
 
 .actor-photo {
     position: relative;
+    float: left;
+    width: 100%;
+    border-bottom: solid;
 }
 
-.movie-list {
-     position: relative;
-     float: left;
+.actor-name{
+    float: left;
+    border-bottom: solid;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+}
 
+.actor-genre {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+}
+
+.itune-link {
+    float: left;
+    position: relative;
+    padding-top: 5px;
+}
+
+.movie-column-title {
+    text-align: center;
+}
+
+.serie-column-title {
+    text-align: center;
+}
+
+.movie-column {
+    position: relative;
+    float: left;
+    width: 350px;
+    text-align: center;
  }
+
+.serie-column {
+    position: relative;
+    float: left;
+    width: 350px;
+    text-align: center;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    list-style-type: none;
+
+}
