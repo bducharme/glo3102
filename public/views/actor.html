@@ -1,80 +1,189 @@
 <div ng-include="'views/navbar.html'"></div>
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="actor-column col-xs-12 col-md-4">
-            <div class="actor-info ">
-                <img class="actor-photo" src="http://ia.media-imdb.com/images/M/MV5BNzAzNjg5MDE3N15BMl5BanBnXkFtZTcwMjIxNzU0OA@@._V1_UX214_CR0,0,214,317_AL_.jpg">
+    <div class="row topPage">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-7 col-sm-7 col-xs-12 movieTitle">
+                    <h1>Joaquin Phoenix</h1>
 
-                </img>
-                <h3 class="actor-name">
-                    Joaquin Phoenix
-                </h3>
-                <h3 class="actor-genre">
-                    Drama
-                </h3>
+                    <div>
+                        <ul class="list-inline pointedList">
+                            <li>Drama</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                </div>
             </div>
-            <div class="imdb-link">
-                <a href="http://www.imdb.com/name/nm0001618/?ref_=nv_sr_1">
-                    <img src="http://ia.media-imdb.com/images/M/MV5BMTgyOTIzMTA0NV5BMl5BcG5nXkFtZTcwMTA3MDg2OA@@._V1_.png"/>
-                </a>
+            <div class="jumbotron">
+                <div class="textInJumbotron">
+                    <p>
+                        Joaquin Phoenix was born in San Juan, Puerto Rico, to Arlyn (Dunetz) and John Bottom, and is the middle child in a brood of five. His parents, from the continental United States, were then serving as Children of God missionaries.
+                        His mother is from a Jewish family in New York, while his father, from California, is of mostly British Isles descent. ...
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <h3>Movies</h3>
+                <ul class="row movie-list">
+                    <li class="row movie-list-element">
+                        <img class="thumbnail movie-photo col-md-3" src="http://ia.media-imdb.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_UX148_CR0,0,148,200_AL_.jpg"/>
+                        <div class="movie-info col-md-9">
+                            <div class="jumbotron jumbotronMovieText">
+                                <h4>Her</h4>
+                                <h5>Release date : 10 january 2014</h5>
+                                <p>A lonely writer develops an unlikely relationship with his newly purchased operating system that's designed to meet his every need. </p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#movieVideoOne">
+                                        Bande annonce
+                                    </button>
+                                    <div id="movieVideoOne" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Her - Bande Annonce</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/hTzCSDOM0JQ" frameborder="0" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="https://geo.itunes.apple.com/us/movie/her-2013/id810314926?mt=6" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </li>
+                    <li class="row movie-list-element">
+                        <img class="thumbnail movie-photo col-md-3" src="http://ia.media-imdb.com/images/M/MV5BMTgxMjY1OTk4MV5BMl5BanBnXkFtZTcwOTQ3NDMxOQ@@._V1_SY317_CR6,0,214,317_AL_.jpg"/>
+                        <div class="movie-info col-md-9">
+                            <div class="jumbotron jumbotronMovieText">
+                                <h4>The Master</h4>
+                                <h5>Release date : 21 september 2012</h5>
+                                <p>A Naval veteran arrives home from war unsettled and uncertain of his future - until he is tantalized by The Cause and its charismatic leader. </p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#movieVideoTwo">
+                                        Bande annonce
+                                    </button>
+                                    <div id="movieVideoTwo" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">The Master - Bande Annonce</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fJ1O1vb9AUU" frameborder="0" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="https://geo.itunes.apple.com/us/movie/the-master/id582477423?mt=6" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-12">
+                <h3>Series</h3>
+                <ul class="row movie-list">
+                    <li class="row movie-list-element">
+                        <img class="thumbnail movie-photo col-md-3" src="http://ia.media-imdb.com/images/M/MV5BMTkwMjg2NzczNV5BMl5BanBnXkFtZTcwNzg5ODcyMQ@@._V1_SY317_CR4,0,214,317_AL_.jpg"/>
+                        <div class="movie-info col-md-9">
+                            <div class="jumbotron jumbotronMovieText">
+                                <h4>Murder, She Wrote</h4>
+                                <p>Professional writer and amateur sleuth Jessica Fletcher uses her intellect, charm, and persistence to get to the bottom of every crime she encounters. </p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#serieVideoOne">
+                                        Bande annonce
+                                    </button>
+                                    <div id="serieVideoOne" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Murder, she wrote - Bande Annonce</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/g7s8NWAqVS8" frameborder="0" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="https://geo.itunes.apple.com/us/tv-season/murder-she-wrote/id988556468?i=1024047736&mt=4" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </li>
+                    <li class="row movie-list-element">
+                        <img class="thumbnail movie-photo col-md-3" src="http://ia.media-imdb.com/images/M/MV5BMTYyODQwMzY3MF5BMl5BanBnXkFtZTYwNTQxNDI2._V1_SX214_AL_.jpg"/>
+                        <div class="movie-info col-md-9">
+                            <div class="jumbotron jumbotronMovieText">
+                                <h4>The Fall Guy</h4>
+                                <p>The adventures of a film stunt performer who moonlights as a bounty hunter when movie work is slow.</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#serieVideoTwo">
+                                        Bande annonce
+                                    </button>
+                                    <div id="serieVideoTwo" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">The Fall Guy - Bande Annonce</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dj9ev40C30M" frameborder="0" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="https://geo.itunes.apple.com/us/tv-season/the-fall-guy-season-1/id268619085?mt=4" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="movie-column col-xs-12 col-md-4">
-            <h3 class="movie-column-title">Movies</h3>
-            <ul class="movie-list">
-                <li class="movie-list-element">
-
-                    <img class="movie-photo" src="http://ia.media-imdb.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_UX148_CR0,0,148,200_AL_.jpg"/>
-                    <div class="movie-info">
-                        <h4>Her</h4>
-                        <h4>Release date : june 1 2016</h4>
-                    </div>
-                </li>
-                <li class="movie-list-element">
-                    <img class="movie-photo" src="http://ia.media-imdb.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_UX148_CR0,0,148,200_AL_.jpg"/>
-                    <div class="movie-info">
-                        <h4>Her</h4>
-                        <h4>Release date : june 1 2016</h4>
-                    </div>
-                </li>
-                <li class="movie-list-element">
-                    <img class="movie-photo" src="http://ia.media-imdb.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_UX148_CR0,0,148,200_AL_.jpg"/>
-                    <div class="movie-info">
-                        <h4>Her</h4>
-                        <h4>Release date : june 1 2016</h4>
-                    </div>
-                </li>
-                <li class="movie-list-element">
-                    <img class="movie-photo" src="http://ia.media-imdb.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_UX148_CR0,0,148,200_AL_.jpg"/>
-                    <div class="movie-info">
-                        <h4>Her</h4>
-                        <h4>Release date : june 1 2016</h4>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="serie-column col-xs-12 col-md-4">
-            <h3 class="serie-column-title">Series</h3>
-            <ul class="movie-list">
-                <li class="movie-list-element">
-                    <img class="movie-photo" src="http://ia.media-imdb.com/images/M/MV5BMjA3NzMyMzU1MV5BMl5BanBnXkFtZTcwNjc1ODUwMg@@._V1_UY200_CR4,0,148,200_AL_.jpg"/>
-                    <h4>Lost</h4>
-                </li>
-                <li class="movie-list-element">
-                    <img class="movie-photo" src="http://ia.media-imdb.com/images/M/MV5BMjA3NzMyMzU1MV5BMl5BanBnXkFtZTcwNjc1ODUwMg@@._V1_UY200_CR4,0,148,200_AL_.jpg"/>
-                    <h4>Lost</h4>
-                </li>
-                <li class="movie-list-element">
-                    <img class="movie-photo" src="http://ia.media-imdb.com/images/M/MV5BMjA3NzMyMzU1MV5BMl5BanBnXkFtZTcwNjc1ODUwMg@@._V1_UY200_CR4,0,148,200_AL_.jpg"/>
-                    <h4>Lost</h4>
-                </li>
-                <li class="movie-list-element">
-                    <img class="movie-photo" src="http://ia.media-imdb.com/images/M/MV5BMjA3NzMyMzU1MV5BMl5BanBnXkFtZTcwNjc1ODUwMg@@._V1_UY200_CR4,0,148,200_AL_.jpg"/>
-                    <h4>Lost</h4>
-                </li>
-            </ul>
+        <div class="thumbnail col-md-4">
+            <img class="actor-photo" src="http://ia.media-imdb.com/images/M/MV5BNzAzNjg5MDE3N15BMl5BanBnXkFtZTcwMjIxNzU0OA@@._V1_UX214_CR0,0,214,317_AL_.jpg">
         </div>
     </div>
-
 </div>
