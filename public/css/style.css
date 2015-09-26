@@ -16,8 +16,6 @@
 
 body {
     padding-top: 70px;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 .jumbotron p{
@@ -31,6 +29,6 @@ body {
     box-shadow:0 10px 10px #080808;
 }
 
-#mediaControl{
-    padding: 20px;
+.topPage {
+    padding-top: 70px;
 }
