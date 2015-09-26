@@ -1,3 +1,8 @@
+.home-bg {
+    background: rgba(0, 0, 0, 0) url(https://leanflix-production.storage.googleapis.com/production/assets/landing/bg-landing-889bfa48452a0cc4558fe8e4bb13b411.jpg) no-repeat fixed center bottom / cover ;
+
+}
+
 .actor-photo {
     position: relative;
     float: left;
@@ -35,5 +40,8 @@
     padding-bottom: 10px;
     padding-left: 0px;
     list-style-type: none;
+}
 
+.actorTopPage {
+    padding-top: 70px;
 }
