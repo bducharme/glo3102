@@ -1,8 +1,116 @@
 <div ng-include="'views/navbar.html'"></div>
 
-<div class="container">
+<div class="container-fluid">
+    <div class="row topPage">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-7 col-sm-7 col-xs-12 movieTitle">
+                    <h1>South Park</h1>
+                    <div>
+                        <ul class="list-inline pointedList">
+                            <li>Humour</li>
+                            <li>2014/09/09</li>
+                            <li>12 saisons</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div id="previewButton">
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myVideoModal">
+                                    Bande annonce
+                                </button>
+                                <div id="myVideoModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
 
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">South Park - Bande Annonce</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/HLtUVBA7V0E" frameborder="0" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
 
-    <!-- Code here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div id="appleButton">
+                                <a href="https://geo.itunes.apple.com/ca/movie/avengers-age-of-ultron/id983441161?mt=6"></a>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+            <div class="jumbotron">
+                <div class="textInJumbotron">
+                    <p>
+                        The show follows the exploits of four boys, Stan Marsh, Kyle Broflovski, Eric Cartman and Kenny McCormick. The boys live in the fictional small town of South Park, located within the real life South Park basin in the Rocky Mountains of central Colorado. The town is also home to an assortment of frequent characters such as students, families, elementary school staff, and other various residents, who tend to regard South Park as a bland and quiet place to live. Prominent settings on the show include the local elementary school,
+                        bus stop, various neighborhoods and the surrounding snowy landscape, actual Colorado landmarks, and the shops and businesses along the town's main street, all of which are based on the appearance of similar locations in the town of Fairplay, Colorado.
+                    </p>
+                </div>
+            </div>
+            <div class="row episodeContainer">
+                <div class="col-md-3">
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <td>
+                                Saison 1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Saison 2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Saison 3
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-9">
+                    <div class="episodesContainer">
+                        <table class="table table-hover table-condensed">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    The first one
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Still the first one
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Again the first one
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    What happened before the first one
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="http://www.gstatic.com/tv/thumb/tvbanners/184338/p184338_b_v7_ac.jpg">
+            </div>
+        </div>
+    </div>
 </div>
