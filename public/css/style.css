@@ -8,13 +8,23 @@
 }
 
 body {
-    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
     letter-spacing:0.1em;
     line-height: 175%;
 }
 
-.jumbotron p {
+@media (max-width: 768px) {
+    body {
+        padding-top: 50px;
+    }
+}
+
+.main-container, .navbar-brand {
+    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+}
+
+.jumbotron p{
     font-size: 16px;
+    padding: 20px;
 }
 
 .thumbnail {
