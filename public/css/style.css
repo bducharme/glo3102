@@ -4,22 +4,17 @@
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+    background-color: #f6f7fb;
 }
 
 body {
-    padding-top: 70px;
+    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+    letter-spacing:0.1em;
+    line-height: 175%;
 }
 
 .jumbotron p{
-    font-size: 12px;
+    font-size: 14px;
     padding: 20px;
 }
 
@@ -29,6 +24,22 @@ body {
     box-shadow:0 10px 10px #080808;
 }
 
-.topPage {
-    padding-top: 70px;
+.modal-title {
+    color: #f6f7fb;
 }
+
+.appleButton a{
+    float: right;
+    overflow:hidden;
+    background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
+    width:110px;
+    height:40px;
+}
+
+
+.main-container {
+    padding-top: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
