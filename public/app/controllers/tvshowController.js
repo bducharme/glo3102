@@ -1,10 +1,6 @@
 'use strict'
 
 angular.module('cornpub')
-    .controller('TvshowController', function(BackgroundService) {
-        BackgroundService.setCurrentBg('');
-    })
-
     .controller('AccordionCtrl', ['$scope', function ($scope) {
         $scope.seasons = [
             {
