@@ -4,10 +4,13 @@
     width: 100%;
     height: 100%;
     background-size: cover;
+    background-color: #f6f7fb;
 }
 
 body {
-    padding-top: 50px;
+    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+    letter-spacing:0.1em;
+    line-height: 175%;
 }
 
 .jumbotron p{
@@ -21,8 +24,8 @@ body {
     box-shadow:0 10px 10px #080808;
 }
 
-.topPage {
-    padding-top: 50px;
+.modal-title {
+    color: #f6f7fb;
 }
 
 .appleButton a{
@@ -33,8 +36,10 @@ body {
     height:40px;
 }
 
-.appleButton {
-    width: 110px;
-}
 
+.main-container {
+    padding-top: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
