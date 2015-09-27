@@ -23,11 +23,22 @@ body {
 }
 
 .jumbotron p{
-    font-size: 14px;
-    padding: 20px;
+    font-size: 16px;
 }
 
-.modal-content{
+.thumbnail {
+    float:left;
+    margin-right: 20px;
+    width: 150px;
+    height: 200px;
+}
+
+.panel {
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.modal-content {
     border-radius: 0px;
     background-color: black;
     box-shadow:0 10px 10px #080808;
@@ -37,18 +48,14 @@ body {
     color: #f6f7fb;
 }
 
-.appleButton a{
-    float: right;
-    overflow:hidden;
+.appleButton {
     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
+    float: right;
     width:110px;
     height:40px;
 }
 
-
 .main-container {
     padding-top: 100px;
     padding-left: 5%;
-    padding-right: 5%;
 }
-

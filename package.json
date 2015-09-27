@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "prestart": "npm install && bower install",
-    "start": "gulp"
+    "start": "gulp && gulp jshint"
   },
   "dependencies": {},
   "devDependencies": {
     "bower": "^1.5.2",
     "gulp": "^3.9.0",
-    "gulp-inject": "^2.2.0"
+    "gulp-inject": "^2.2.0",
+    "gulp-jshint": "~1.11.2"
   }
 }
