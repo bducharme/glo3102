@@ -1,7 +1,7 @@
-'use strict'
-
 angular.module('cornpub')
     .controller('AccordionCtrl', ['$scope', function ($scope) {
+        'use strict';
+
         $scope.seasons = [
             {
                 number: 'Season - 1',

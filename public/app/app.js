@@ -1,8 +1,8 @@
-'use strict';
-
 angular.module('cornpub', ['ui.router','ui.bootstrap'])
     .config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/home')
+        'use strict';
+
+        $urlRouterProvider.otherwise('/home');
         $stateProvider
             .state('home', {
                 url: '/home',
@@ -19,6 +19,5 @@ angular.module('cornpub', ['ui.router','ui.bootstrap'])
             .state('tvshow', {
                 url: '/tvshow',
                 templateUrl: 'views/tvshow.html'
-            })
-
-    })
+            });
+    });
