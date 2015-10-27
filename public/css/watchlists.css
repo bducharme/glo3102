@@ -1,0 +1,52 @@
+.table-custom>tbody>tr:nth-child(odd)>th {
+  background-color: #eeeeee;
+}
+
+.table-custom thead tr th,
+.table-custom tbody tr td {
+  vertical-align: middle;
+}
+
+.table-custom thead tr th:first-child {
+  width: 100px;
+}
+
+.table-custom tbody tr td:nth-child(2) {
+  cursor: pointer;
+}
+
+.movieList {
+  list-style: none;
+  font-size: 16px;
+  padding: 10px 0 10px 0;
+  border-top: 1px solid grey;
+}
+
+.artwork {
+  display:inline-block;
+}
+.movie-information {
+  display:inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+}
+
+.movie-information>h3{
+  margin: 0 5px 0 0;
+  display:inline-block;
+}
+
+.movie-information>span{
+  font-size: 13px;
+}
+
+.movie-information>p{
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.removeButton {
+  display:inline-block;
+  margin: 5px;
+  float: right;
+}
