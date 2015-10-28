@@ -73,10 +73,10 @@ angular.module('cornpub')
     };
 
     $scope.deleteMovie = function (watchlist, movie) {
-      var updatedWatchlist = WatchlistMovieFactory.delete({
+      WatchlistMovieFactory.delete({
         id: watchlist.id,
         trackId: movie.trackId
-      }, function () {
+      }, function (updatedWatchlist) {
         updatedWatchlist.expanded = true;
         var index = $scope.watchlists.indexOf(watchlist);
         $scope.watchlists[index] = updatedWatchlist;
