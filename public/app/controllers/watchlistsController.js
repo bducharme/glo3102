@@ -31,7 +31,7 @@ angular.module('cornpub')
         function (createdWatchlist) {
           $scope.watchlists.unshift(createdWatchlist);
           $scope.toggleAddMode();
-        })
+        });
     };
 
     $scope.getWatchlist = function (watchlistId) {
@@ -80,7 +80,7 @@ angular.module('cornpub')
         updatedWatchlist.expanded = true;
         var index = $scope.watchlists.indexOf(watchlist);
         $scope.watchlists[index] = updatedWatchlist;
-      })
+      });
     };
 
     $scope.getWatchlists();

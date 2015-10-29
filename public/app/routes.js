@@ -24,5 +24,5 @@ angular.module('cornpub')
         url: '/watchlists',
         templateUrl: 'views/watchlists.html',
         controller: 'WatchlistsCtrl'
-      })
+      });
   });
