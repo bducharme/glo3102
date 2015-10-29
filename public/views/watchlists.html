@@ -72,7 +72,7 @@
               <ul class="movieList" ng-repeat="movie in watchlist.movies">
                 <li>
                   <div>
-                    <div class="artwork"><img src="{{movie.artworkUrl100}}"></div>
+                    <div class="artwork"><img ng-src="{{movie.artworkUrl100}}"></div>
                     <div class="movie-information">
                       <h3>{{movie.trackName}}</h3>
                       <span>({{movie.releaseDate | date :"yyyy"}})</span>
