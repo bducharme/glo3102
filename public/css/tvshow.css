@@ -18,17 +18,3 @@
 .pointedList li:last-child:after {
     content: '';
 }
-
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-    background-color: #ffffff;
-}
-
-.table {
-    background-color: #8c8c8c;
-    cursor: pointer;
-}
-
-.table tr:nth-child(even) {
-    background-color: #5e5e5e;
-    cursor: pointer;
-}
