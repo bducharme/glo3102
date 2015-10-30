@@ -1,4 +1,4 @@
-angular.module('cornpub', ['ui.router','ui.bootstrap'])
+angular.module('cornpub', ['ngResource','ui.router','ui.bootstrap'])
     .config(function ($stateProvider, $urlRouterProvider) {
         'use strict';
 

@@ -5,7 +5,9 @@
     "prestart": "npm install && bower install",
     "start": "gulp && gulp jshint && node server.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "angular-resource": "^1.4.7"
+  },
   "devDependencies": {
     "bower": "^1.5.2",
     "gulp": "^3.9.0",

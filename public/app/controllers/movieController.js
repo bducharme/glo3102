@@ -8,10 +8,13 @@ angular.module('cornpub')
 
 angular.module('cornpub')
     .controller('movieController', function ($scope, movieFactory) {
+        movieFactory.get(
+            {id: '265727087'},
+            function(data) {
+                $scope.movie = data.results[0];
+            }
+        );
         /*
-        $scope.movie = movieFactory.get(
-            {id: '265727087'}
-        ).results[0];
          $scope.movie =
          {
          'trackName': 'Saw',
