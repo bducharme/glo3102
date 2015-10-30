@@ -1,5 +1,20 @@
 angular.module('cornpub')
-    .controller('AccordionCtrl', ['$scope', function ($scope) {
+  .controller('TVshowCtrl', function ($scope, $stateParams, TVshowService) {
+    'use strict';
+
+
+
+    TVshowService.get({
+      id: $stateParams.seasonId
+    }, function(season) {
+      $scope.getTVshowsSeason1 = season.results[0];
+    });
+
+
+  })
+
+
+  .controller('AccordionCtrl', function ($scope) {
         'use strict';
 
         $scope.seasons = [
@@ -12,4 +27,4 @@ angular.module('cornpub')
                 episodes: [{'title': 'episode 1'}, {'title': 'episode 2'}, {'title': 'episode 3'}]
             }
         ];
-    }]);
+    });
