@@ -1,25 +1,22 @@
 angular.module('cornpub')
-  .factory('WatchlistsFactory', function ($resource) {
+  .factory('WatchlistsFactory', function ($resource, baseURL) {
     'use strict';
-    return $resource('http://localhost:3000/unsecure/watchlists', {}, {
-    //return $resource('https://umovie.herokuapp.com/unsecure/watchlists', {}, {
+    return $resource(baseURL + '/unsecure/watchlists', {}, {
       query: { method: 'GET', isArray: true },
       create: { method: 'POST' }
     });
   })
-  .factory('WatchlistFactory', function ($resource) {
+  .factory('WatchlistFactory', function ($resource, baseURL) {
     'use strict';
-    return $resource('http://localhost:3000/unsecure/watchlists/:id', {}, {
-    //return $resource('https://umovie.herokuapp.com/unsecure/watchlists/:id', {}, {
+    return $resource(baseURL + '/unsecure/watchlists/:id', {}, {
       get: { method: 'GET' },
       update: { method: 'PUT', params: {id: '@id'} },
       delete: { method: 'DELETE', params: {id: '@id'} }
     });
   })
-  .factory('WatchlistMovieFactory', function ($resource) {
+  .factory('WatchlistMovieFactory', function ($resource, baseURL) {
     'use strict';
-    return $resource('http://localhost:3000/unsecure/watchlists/:id/movies/:trackId', {}, {
-      //return $resource('https://umovie.herokuapp.com/unsecure/watchlists/:id/movies/:trackId', {}, {
+    return $resource(baseURL + '/unsecure/watchlists/:id/movies/:trackId', {}, {
       delete: { method: 'DELETE', params: {id: '@id', trackId: '@trackId'} }
     });
   });
