@@ -14,7 +14,7 @@ angular.module('cornpub', ['ui.router','ui.bootstrap'])
             })
             .state('movie', {
                 url: '/movie',
-                templateUrl: 'views/movie.html'
+                templateUrl: 'views/movies/movie.html'
             })
             .state('tvshow', {
                 url: '/tvshow',
