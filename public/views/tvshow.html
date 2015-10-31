@@ -1,17 +1,17 @@
 <div ng-include="'template/navbar.html'"></div>
 
-<div class="container-fluid main-container">
+<div class="container-fluid main-container" ng-controller="TVshowCtrl">
     <div class="row topPage">
     </div>
     <div class="row">
         <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
-                    <h1 class="row">South Park</h1>
+                    <h1 class="row">{{TVshowInfo.artistName}}</h1>
 
                     <div class="row">
                         <ul class="list-inline pointedList">
-                            <li>Humour</li>
+                            <li>{{TVshowInfo.primaryGenreName}}</li>
                             <li>2014/09/09</li>
                             <li>12 saisons</li>
                         </ul>
@@ -27,7 +27,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">South Park - Bande Annonce</h4>
+                                    <h4 class="modal-title">{{TVshowInfo.artistName}} - Bande Annonce</h4>
                                 </div>
                                 <div class="modal-body">
                                     <iframe width="100%" height="315"
@@ -39,24 +39,24 @@
                     </div>
                 </div>
                 <div class="appleButton col-md-2 col-sm-6 col-xs-offset-0">
-                    <a href="https://geo.itunes.apple.com/ca/movie/avengers-age-of-ultron/id983441161?mt=6"></a>
+                    <a href="{{TVshowSeason[1].artistViewUrl}}"></a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="jumbotron">
                         <p>
-                            {{getTVshowsSeason1.collectionName}}
+                            {{TVshowSeason[1].longDescription}}
                         </p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div ng-controller="AccordionCtrl">
+                <div >
                     <accordion>
-                        <accordion-group is-open="status.open" ng-repeat="season in seasons">
+                        <accordion-group is-open="status.open" ng-repeat="season in TVshowSeason">
                             <accordion-heading>
-                                {{season.number}} <i class="pull-right glyphicon"
+                                {{season.collectionName}} <i class="pull-right glyphicon"
                                                      ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                             </accordion-heading>
                             <ul>
@@ -70,7 +70,7 @@
             </div>
         </div>
         <img class="col-md-4 col-sm-4 col-xs-12"
-             src="http://www.gstatic.com/tv/thumb/tvbanners/184338/p184338_b_v7_ac.jpg">
+             src="{{TVshowSeason[1].artworkUrl60}}">
     </div>
 </div>
 </div>

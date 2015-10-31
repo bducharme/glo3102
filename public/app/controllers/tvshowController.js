@@ -4,11 +4,15 @@ angular.module('cornpub')
 
 
 
-    TVshowService.get({
-      id: $stateParams.seasonId
-    }, function(season) {
-      $scope.getTVshowsSeason1 = season.results[0];
-    });
+        TVshowService.get({
+          id: $stateParams.seasonId
+        }, function(season) {
+            var seasonResult = [];
+            for(var seasons = 1; seasons < season.results.length; seasons++)
+                seasonResult.push(season.results[seasons]);
+            $scope.TVshowSeason = seasonResult;
+            $scope.TVshowInfo = season.results[0];
+        });
 
 
   })
