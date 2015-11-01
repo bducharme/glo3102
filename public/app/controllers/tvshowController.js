@@ -1,5 +1,5 @@
 angular.module('cornpub')
-  .controller('TVshowCtrl', function ($scope, $stateParams, TVshowService) {
+  .controller('TVshowCtrl', function ($scope, $stateParams, TVshowService, TVshowServiceEpisodes) {
     'use strict';
 
 
@@ -14,7 +14,11 @@ angular.module('cornpub')
             $scope.TVshowInfo = season.results[0];
         });
 
-
+        TVshowServiceEpisodes.get({
+            id: $stateParams.seasonId
+        },function(episode) {
+           $scope.TVshowEpisodes = episode.results;
+        });
   })
 
 

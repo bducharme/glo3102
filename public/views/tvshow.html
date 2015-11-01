@@ -13,33 +13,32 @@
                         <ul class="list-inline pointedList">
                             <li>{{TVshowInfo.primaryGenreName}}</li>
                             <li>2014/09/09</li>
-                            <li>12 saisons</li>
                         </ul>
                     </div>
                 </div>
                 <div id="previewButton" class="col-md-4 col-sm-6 col-xs-12">
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
                             data-target="#myVideoModal">
-                        Bande annonce
+                        Trailer
                     </button>
                     <div id="myVideoModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">{{TVshowInfo.artistName}} - Bande Annonce</h4>
+                                    <h4 class="modal-title">{{TVshowInfo.artistName}} - Trailer</h4>
                                 </div>
                                 <div class="modal-body">
                                     <iframe width="100%" height="315"
-                                            src="https://www.youtube.com/embed/HLtUVBA7V0E" frameborder="0"
+                                            src="https://www.youtube.com/embed/s9SJSC1ve-I" frameborder="0"
                                             allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="appleButton col-md-2 col-sm-6 col-xs-offset-0">
-                    <a href="{{TVshowSeason[1].artistViewUrl}}"></a>
+                <div class="col-md-2 col-sm-6 col-xs-offset-0">
+                    <a class="appleButton" href="{{TVshowSeason[1].artistViewUrl}}"></a>
                 </div>
             </div>
             <div class="row">
@@ -59,18 +58,18 @@
                                 {{season.collectionName}} <i class="pull-right glyphicon"
                                                      ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                             </accordion-heading>
-                            <ul>
-                                <li ng-repeat="episode in season.episodes">
-                                    {{episode['title']}}
+                            <ol>
+                                <li ng-repeat="episode in TVshowEpisodes | orderBy : '+trackNumber' | filter :{collectionName:season.collectionName}">
+                                    {{episode.trackCensoredName}}
                                 </li>
-                            </ul>
+                            </ol>
                         </accordion-group>
                     </accordion>
                 </div>
             </div>
         </div>
         <img class="col-md-4 col-sm-4 col-xs-12"
-             src="{{TVshowSeason[1].artworkUrl60}}">
+             ng-src="{{TVshowSeason[1].artworkUrl60}}">
     </div>
 </div>
 </div>
