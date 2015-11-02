@@ -1,0 +1,30 @@
+<div ng-include="'template/navbar.html'"></div>
+
+<div class="container-fluid main-container">
+    <div class="row topPage"></div>
+    <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12" ng-controller="SearchCtrl">
+            <h1>Search</h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Watchlist</th>
+                </tr>
+                <tr ng-repeat="result in getResults()">
+                    <td>
+                        <div class="artwork">
+                            <img ng-src="{{result.artworkUrl100}}">
+                        </div>
+                    </td>
+                    <td>
+                        <a ui-sref="#/movie/{{result.trackId}}">{{result.trackName}}</a>
+                    </td>
+                    <td>{{result.trackId}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
