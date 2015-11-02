@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="NavbarCtrl">
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -12,16 +12,16 @@
                 <a class="navbar-brand" ui-sref="home">CornPub</a>
             </div>
             <form class="navbar-form navbar-left" role="search" method="get">
-                <!--<div ng-controller="SearchCtrl">-->
+                <div>
                     <div class="input-group">
-                        <input name="q" type="text" ng-model="asdfdas" class="form-control" placeholder="Search..."/>
+                        <input name="q" type="text" ng-model="SearchStringService.searchString" class="form-control" placeholder="Search..."/>
                         <div class="input-group-btn">
-                            <button type="submit" class="btn btn-default" ng-click="updateSearch()" ui-sref="search">
+                            <button type="submit" class="btn btn-default" ng-click="$emit('search')" ui-sref="search">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
                         </div>
                     </div>
-                <!--</div>-->
+                </div>
             </form>
             <div class="collapse navbar-collapse" id="navbar-collapse-umovie">
                 <ul class="nav navbar-nav">

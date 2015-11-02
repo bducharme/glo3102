@@ -19,7 +19,7 @@ angular.module('cornpub')
       .state('search', {
         url: '/search',
         templateUrl: 'views/search.html',
-        Controller: 'SearchCtrl'
+        controller: 'SearchCtrl'
       })
       .state('tvshow', {
         url: '/tvshow',
