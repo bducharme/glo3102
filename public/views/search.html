@@ -8,6 +8,8 @@
 
             <ng-pluralize count="searchResults[0].resultCount" when="{'0': 'No results', 'one': '1 result', 'other': '{} results'}"></ng-pluralize>
 
+            <dir-pagination-controls max-size="7" boundary-links="true" template-url="views/pagination.html"></dir-pagination-controls>
+
             <table class="table">
                 <thead>
                 <tr>
@@ -16,7 +18,7 @@
                     <th>Watchlist</th>
                 </tr>
 
-                <tr ng-repeat="result in searchResults[0].results">
+                <tr dir-paginate="result in searchResults[0].results | itemsPerPage: pageSize" current-page="currentPage">
                     <td>
                         <div class="artwork">
                             <img ng-src="{{result.artworkUrl100}}">
@@ -26,9 +28,12 @@
                         <a ui-sref="#/movie/{{result.trackId}}">{{result.trackName}}</a>
                     </td>
                     <td>{{result.trackId}}</td>
-                </tr>
-                </tbody>
+                </tr></tbody>
             </table>
+
+            <dir-pagination-controls max-size="7" boundary-links="true" template-url="views/pagination.html"></dir-pagination-controls>
+
+
         </div>
     </div>
 </div>
