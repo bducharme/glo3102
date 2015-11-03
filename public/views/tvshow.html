@@ -1,6 +1,6 @@
 <div ng-include="'template/navbar.html'"></div>
 
-<div class="container-fluid main-container" ng-controller="TVshowCtrl">
+<div class="container-fluid main-container">
     <div class="row topPage">
     </div>
     <div class="row">
@@ -8,7 +8,6 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <h1 class="row">{{TVshowInfo.artistName}}</h1>
-
                     <div class="row">
                         <ul class="list-inline pointedList">
                             <li>{{TVshowInfo.primaryGenreName}}</li>
@@ -68,8 +67,7 @@
                 </div>
             </div>
         </div>
-        <img class="col-md-4 col-sm-4 col-xs-12"
-             ng-src="{{TVshowSeason[1].artworkUrl60}}">
+        <img class="col-md-4 col-sm-4 col-xs-12" ng-src="{{TVshowSeason[1].artworkUrl60}}">
     </div>
 </div>
 </div>
