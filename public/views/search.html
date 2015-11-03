@@ -25,7 +25,17 @@
                         </div>
                     </td>
                     <td>
-                        <a ui-sref="#/movie/{{result.trackId}}">{{result.trackName}}</a>
+                        <div ng-switch on="result.wrapperType">
+                            <a ng-switch-when="collection" ui-sref="#/tvshow/{{result.collectionId}}">
+                                {{result.collectionName}}
+                            </a>
+                            <a ng-switch-when="track" ui-sref="#/movie/{{result.trackId}}">
+                                {{result.trackName}}
+                            </a>
+                            <a ng-switch-default>
+                                ERROR
+                            </a>
+                        </div>
                     </td>
                     <td>{{result.trackId}}</td>
                 </tr></tbody>
