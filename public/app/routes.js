@@ -18,8 +18,9 @@ angular.module('cornpub')
         templateUrl: 'views/movie.html'
       })
       .state('tvshow', {
-        url: '/tvshow',
-        templateUrl: 'views/tvshow.html'
+        url: '/tvshow/:seasonId',
+        templateUrl: 'views/tvshow.html',
+        controller: 'TVshowCtrl'
       })
       .state('watchlists', {
         url: '/watchlists',
