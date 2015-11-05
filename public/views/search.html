@@ -1,0 +1,51 @@
+<div ng-include="'template/navbar.html'"></div>
+
+<div class="container-fluid main-container">
+    <div class="row topPage"></div>
+    <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12">
+            <h1>Search</h1>
+
+            <ng-pluralize count="searchResults[0].resultCount" when="{'0': 'No results', 'one': '1 result', 'other': '{} results'}"></ng-pluralize>
+
+            <dir-pagination-controls max-size="7" boundary-links="true" template-url="views/pagination.html"></dir-pagination-controls>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Watchlist</th>
+                </tr>
+
+                <tr dir-paginate="result in searchResults[0].results | itemsPerPage: pageSize" current-page="currentPage">
+                    <td>
+                        <div class="artwork">
+                            <img ng-src="{{result.artworkUrl100}}">
+                        </div>
+                    </td>
+                    <td>
+                        <div ng-switch on="result.wrapperType">
+                            <a ng-switch-when="collection" ui-sref="#/tvshow/{{result.collectionId}}">
+                                {{result.collectionName}}
+                            </a>
+                            <a ng-switch-when="track" ui-sref="#/movie/{{result.trackId}}">
+                                {{result.trackName}}
+                            </a>
+                            <a ng-switch-default>
+                                ERROR
+                            </a>
+                        </div>
+                    </td>
+                    <td>{{result.trackId}}</td>
+                </tr></tbody>
+            </table>
+
+            <dir-pagination-controls max-size="7" boundary-links="true" template-url="views/pagination.html"></dir-pagination-controls>
+
+
+        </div>
+    </div>
+</div>
+
+</div>
