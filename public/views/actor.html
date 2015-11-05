@@ -3,9 +3,9 @@
 <div class="container-fluid main-container">
 
     <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <h1>Joaquin Phoenix</h1>
-            <h4>Drama</h4>
+        <div class="col-md-12 col-sm-12 col-xs-12" ng-controller="ActorCtrl" ng-init="getActor(95221335)">
+            <h1>{{actor.artistName}}</h1>
+            <h4>{{actor.primaryGenreName}}</h4>
         </div>
     </div>
 
@@ -27,70 +27,55 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <h2>Movies</h2>
+    <div class="movies" ng-controller="ActorMoviesCtrl" ng-init="getActorMovies(95221335)">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h2>Movies</h2>
+            </div>
         </div>
-    </div>
-    <div class="row" ng-repeat="i in [1, 2, 3]">
-        <div class="col-md-2 col-sm-2 col-xs-12">
-            <img class="thumbnail" src="http://ia.media-imdb.com/images/M/MV5BMjA1Nzk0OTM2OF5BMl5BanBnXkFtZTgwNjU2NjEwMDE@._V1_UX148_CR0,0,148,200_AL_.jpg"/>
-        </div>
-        <div class="col-md-6 col-sm-9 col-xs-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">Her</div>
-                <div class="panel-body">
-                    <h5>Release date : 10 january 2014</h5>
-                    <p>A lonely writer develops an unlikely relationship with his newly purchased operating system that's designed to meet his every need.</p>
-                    <div>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#movieplayer">
-                            Bande annonce
-                        </button>
-                        <a class="appleButton" href="https://geo.itunes.apple.com/us/movie/her-2013/id810314926?mt=6"></a>
+        <div class="row" ng-repeat="movie in actorMovies">
+            <div class="movie-image col-md-2 col-sm-2 col-xs-12">
+                <img class="thumbnail" src="{{movie.artworkUrl100}}"/>
+            </div>
+            <div class="col-md-6 col-sm-9 col-xs-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">{{movie.trackName}}</div>
+                    <div class="panel-body">
+                        <h5>Release date : {{movie.releaseDate | date:'yyyy-MM-dd' }}</h5>
+                        <p>{{movie.longDescription}}</p>
+                        <div>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#movieplayer">
+                                Bande annonce
+                            </button>
+                            <a class="appleButton" href="{{movie.trackViewUrl}}"></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <h2>Series</h2>
-        </div>
-    </div>
-    <div class="row" ng-repeat="i in [1, 2, 3]">
-        <div class="col-md-2 col-sm-2 col-xs-12">
-            <img class="thumbnail" src="http://ia.media-imdb.com/images/M/MV5BMTkwMjg2NzczNV5BMl5BanBnXkFtZTcwNzg5ODcyMQ@@._V1_SY317_CR4,0,214,317_AL_.jpg"/>
-        </div>
-        <div class="col-md-6 col-sm-9 col-xs-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">Murder, She Wrote</div>
-                <div class="panel-body">
-                    <p>Professional writer and amateur sleuth Jessica Fletcher uses her intellect, charm, and persistence to get to the bottom of every crime she encounters. </p>
-                    <div>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#movieplayer">
-                            Bande annonce
-                        </button>
-                        <a class="appleButton" href="https://geo.itunes.apple.com/us/tv-season/murder-she-wrote/id988556468?i=1024047736&mt=4"></a>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h2>Series</h2>
             </div>
         </div>
-    </div>
 
-    <div id="movieplayer" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Title</h4>
-                </div>
-                <div class="modal-body">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/hTzCSDOM0JQ" frameborder="0" allowfullscreen></iframe>
+        <div id="movieplayer" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/hTzCSDOM0JQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 </div>
+
+
 
