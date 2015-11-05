@@ -9,6 +9,13 @@
         <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
+
+                  <div class="alert" role="alert" ng-show="alert">
+                    <div>
+                      <uib-alert close="closeAlert()" type="success">{{movie.trackName}} was successfully added!</uib-alert>
+                    </div>
+                  </div>
+
                     <h1 class="row">{{movie.trackName}}</h1>
 
                     <div class="row">

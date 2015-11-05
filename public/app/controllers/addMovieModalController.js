@@ -16,8 +16,8 @@ angular.module('cornpub')
       modalInstance.result.then(function (selectedWatchlist) {
         WatchlistMovieFactory.create({
           id: selectedWatchlist.id
-        }, movie, function (returnedWatchlist) {
-          //confirmation to the user
+        }, movie, function () {
+          $scope.$emit("movieAdded");
         });
       });
     };

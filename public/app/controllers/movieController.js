@@ -16,4 +16,12 @@ angular.module('cornpub')
       }
     );
 
+    $scope.closeAlert = function() {
+      $scope.alert = false;
+    };
+
+    $scope.$on("movieAdded", function() {
+      $scope.alert = true;
+    });
+
   });
