@@ -1,5 +1,5 @@
 angular.module('cornpub')
-  .controller('WatchlistsCtrl', function ($scope, WatchlistsFactory, WatchlistFactory, WatchlistMovieFactory) {
+  .controller('WatchlistsCtrl', function ($scope, WatchlistsFactory, WatchlistMovieFactory) {
     'use strict';
 
     $scope.watchlists = [];
@@ -35,18 +35,18 @@ angular.module('cornpub')
     };
 
     $scope.getWatchlist = function (watchlistId) {
-      WatchlistFactory.get({
+      WatchlistsFactory.get({
         id: watchlistId
       });
     };
 
     $scope.updateWatchlist = function (watchlist) {
       watchlist.editMode = false;
-      WatchlistFactory.update(watchlist);
+      WatchlistsFactory.update(watchlist);
     };
 
     $scope.deleteWatchlist = function (watchlist) {
-      WatchlistFactory.delete({
+      WatchlistsFactory.remove({
         id: watchlist.id
       }, function () {
         var index = $scope.watchlists.indexOf(watchlist);
