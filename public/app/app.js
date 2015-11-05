@@ -7,6 +7,3 @@ angular.module('cornpub', ['ngResource', 'ngAnimate', 'ui.router', 'ui.bootstrap
 
     $logProvider.debugEnabled(true);
   });
-
-
-

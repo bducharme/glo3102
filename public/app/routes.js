@@ -10,7 +10,8 @@ angular.module('cornpub')
       })
       .state('actor', {
         url: '/actor',
-        templateUrl: 'views/actor.html'
+        templateUrl: 'views/actor.html',
+        controller: 'ActorCtrl'
       })
       .state('movie', {
         url: '/movie',
@@ -22,8 +23,9 @@ angular.module('cornpub')
         controller: 'SearchCtrl'
       })
       .state('tvshow', {
-        url: '/tvshow',
-        templateUrl: 'views/tvshow.html'
+        url: '/tvshow/:seasonId',
+        templateUrl: 'views/tvshow.html',
+        controller: 'TVshowCtrl'
       })
       .state('watchlists', {
         url: '/watchlists',
