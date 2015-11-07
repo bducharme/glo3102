@@ -52,7 +52,7 @@
             <div class="row">
                 <div >
                     <accordion>
-                        <accordion-group is-open="status.open" ng-repeat="season in TVshowSeason">
+                        <accordion-group is-open="status.open" ng-repeat="season in TVshowSeason | orderBy : '+numSeason'">
                             <accordion-heading>
                                 {{season.collectionName}} <i class="pull-right glyphicon"
                                                      ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
