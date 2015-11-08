@@ -11,6 +11,8 @@ angular.module('cornpub')
         movieFactory.get(
             {id: '265727087'},
             function(data) {
+                data.results[0].artworkUrl100 = data.results[0].artworkUrl100.substring(0, data.results[0].artworkUrl100.length - 13);
+                data.results[0].artworkUrl100 = data.results[0].artworkUrl100 + "500x500bb.jpg";
                 $scope.movie = data.results[0];
             }
         );
