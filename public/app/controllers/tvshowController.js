@@ -12,7 +12,6 @@ angular.module('cornpub')
 
             for(var seasons = 1; seasons < season.results.length; seasons++) {
                 $scope.getEpisodesList(season.results[seasons].collectionId);
-                season.results[seasons].episodes = $scope.TVshowEpisodes;
                 if(showName.length == season.results[seasons].collectionName.length + 1){
                     season.results[seasons].numSeason = parseInt(season.results[seasons].collectionName.substring(showName.length, showName.length + 1));
                 }
@@ -21,7 +20,10 @@ angular.module('cornpub')
                 }
                 seasonResult.push(season.results[seasons]);
             }
+            seasonResult[0].artworkUrl100 = seasonResult[0].artworkUrl100.substring(0, seasonResult[0].artworkUrl100.length - 13);
+            seasonResult[0].artworkUrl100 = seasonResult[0].artworkUrl100 + "500x500bb.jpg";
             $scope.TVshowSeason = seasonResult;
+
             $scope.TVshowInfo = season.results[0];
         });
 
