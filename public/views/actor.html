@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-6 col-sm-9 col-xs-12">
                 <div class="panel panel-info">
-                    <div class="panel-heading">{{movie.trackName}}</div>
+                    <div class="panel-heading" ui-sref="movie({movieId: movie.trackId})">{{movie.trackName}}</div>
                     <div class="panel-body">
                         <h5>Release date : {{movie.releaseDate | date:'yyyy-MM-dd' }}</h5>
                         <p>{{movie.longDescription}}</p>
