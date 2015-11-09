@@ -75,7 +75,7 @@
 
           <tr ng-if="watchlist.expanded && !watchlist.editMode">
             <td colspan="3">
-              <a href="http://www.w3schools.com"><h5>Search our collections to add
+              <a ui-sref="search"><h5>Search our collections to add
                 <ng-pluralize count="watchlist.movies.length" when="{'0': ' the first movie ', 'one': ' more movies' ,  'other': ' more movies '}"></ng-pluralize>
                 to this watchlist!
               </h5></a>
