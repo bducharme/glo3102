@@ -28,9 +28,22 @@
                                     <h4 class="modal-title">{{TVshowInfo.artistName}} - Trailer</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <iframe width="100%" height="315"
-                                            src="https://www.youtube.com/embed/s9SJSC1ve-I" frameborder="0"
-                                            allowfullscreen></iframe>
+                                    <div ng-if="!TVshowEpisodes[0].previewUrl">
+                                        <iframe width="100%" height="315"
+                                                src="https://www.youtube.com/embed/s9SJSC1ve-I" frameborder="0"
+                                                allowfullscreen></iframe>
+
+                                    </div>
+
+                                    <div ng-if="TVshowEpisodes[0].previewUrl">
+                                        <video width="320" height="240" controls>
+                                            <source ng-src="TVshowEpisodes[0].previewUrl" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <p>
+                                            <a ng-href="{{TVshowEpisodes[0].previewUrl}}">Lien alternatif.</a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <img class="col-md-4 col-sm-4 col-xs-12" ng-src="{{TVshowSeason[0].artworkUrl100}}">
+        <img class="col-md-4 col-sm-4 col-xs-12" ng-src="{{TVshowSeason[0].artworkUrl500}}">
     </div>
 </div>
 </div>

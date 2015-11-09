@@ -20,8 +20,7 @@ angular.module('cornpub')
                 }
                 seasonResult.push(season.results[seasons]);
             }
-            seasonResult[0].artworkUrl100 = seasonResult[0].artworkUrl100.substring(0, seasonResult[0].artworkUrl100.length - 13);
-            seasonResult[0].artworkUrl100 = seasonResult[0].artworkUrl100 + "500x500bb.jpg";
+            seasonResult[0].artworkUrl500 = seasonResult[0].artworkUrl100.substring(0, seasonResult[0].artworkUrl100.length - 13)+"500x500bb.jpg";
             $scope.TVshowSeason = seasonResult;
 
             $scope.TVshowInfo = season.results[0];
