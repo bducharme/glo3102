@@ -1,5 +1,5 @@
 angular.module('cornpub')
-    .controller('TVshowCtrl', function ($scope, $stateParams, TVshowService, TVshowServiceEpisodes) {
+    .controller('TVshowCtrl', function ($scope, $stateParams, TVshowService, TVshowServiceEpisodes, PreviewService) {
         'use strict';
 
         $scope.TVshowEpisodes = [];
@@ -35,4 +35,11 @@ angular.module('cornpub')
                 })
             });
         };
+
+        PreviewService.get({
+
+        }, function(preview){
+            $scope.videoLink1 = "https://www.youtube.com/embed/" + preview.items[0].id.videoId;
+        });
+
     });
