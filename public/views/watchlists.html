@@ -22,14 +22,24 @@
             <td>
               <div class="btn-toolbar">
                 <div class="btn-group">
-                  <i class="btn glyphicon glyphicon-floppy-disk" ng-click="createWatchlist()" title="Create" ng-disabled="addForm.$invalid"></i>
+                  <i class="btn glyphicon glyphicon-floppy-disk" ng-click="createWatchlist(addForm.newWatchlist.$valid)" title="Create" ng-disabled="addForm.$invalid"></i>
                   <i class="btn glyphicon glyphicon-remove" ng-click="toggleAddMode()" title="Cancel"></i>
                 </div>
               </div>
             </td>
             <td>
-              <form name="addForm">
-                <input type="text" ng-model="newWatchlist.name" class="form-control" required placeholder="new watchlist name..." ng-keydown="saveOnEnter(watchlist, $event)" required />
+              <form name="addForm" method="post">
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : addForm.newWatchlist.$invalid && addForm.newWatchlist.$dirty }">
+                <input required ng-maxlength="40" type="text" ng-model="newWatchlist.name" class="form-control" name="newWatchlist" placeholder="new watchlist name..." ng-keydown="saveOnEnter(watchlist, $event, addForm.newWatchlist.$valid)" />
+                    <span class="form-control-feedback"></span>
+                    <div class="help-block text-danger" ng-if="addForm.newWatchlist.$dirty" >
+                      <span class="error" ng-show="addForm.newWatchlist.$error.required">
+                      A name is required!</span>
+                      <span class="error" ng-show="addForm.newWatchlist.$error.maxlength">
+                      The name is too long!</span>
+                    </div>
+                  </div>
+                </div>
               </form>
             </td>
           </tr>

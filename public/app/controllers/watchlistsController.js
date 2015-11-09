@@ -26,12 +26,14 @@ angular.module('cornpub')
       }
     };
 
-    $scope.createWatchlist = function () {
-      WatchlistsFactory.create($scope.newWatchlist,
-        function (createdWatchlist) {
-          $scope.watchlists.unshift(createdWatchlist);
-          $scope.toggleAddMode();
-        });
+    $scope.createWatchlist = function (isNewWatchlistValid) {
+      if (isNewWatchlistValid) {
+        WatchlistsFactory.create($scope.newWatchlist,
+          function (createdWatchlist) {
+            $scope.watchlists.unshift(createdWatchlist);
+            $scope.toggleAddMode();
+          });
+      }
     };
 
     $scope.getWatchlist = function (watchlistId) {
@@ -65,9 +67,9 @@ angular.module('cornpub')
       }
     };
 
-    $scope.saveOnEnter = function (watchlist, args) {
+    $scope.saveOnEnter = function (watchlist, args, isNewWatchlistValid ) {
       if (args.keyCode == 13) {
-        $scope.createWatchlist();
+        $scope.createWatchlist(isNewWatchlistValid);
         watchlist.expanded = false;
       }
     };
