@@ -9,14 +9,29 @@
             <a class="btn btn-primary btn-lg" ui-sref="home">Sign Up Now!</a>
             <a class="btn btn-default btn-outline btn-lg" ui-sref="home">Browse</a>
 
-            <h4 class="gray">Here some stuff</h4>
+            <h4 class="gray">Movies</h4>
 
-            <button type="button" class="btn btn-info btn-lg" ui-sref="tvshow({ seasonId: 278750007 })">
-                Watch Rome! it's great
-            </button>
-            <button type="button" class="btn btn-info btn-lg" ui-sref="tvshow({ seasonId: 190066649 })">
-                Ellen Pompeo fan?
-            </button>
+          <div class="list-group">
+            <a ui-sref="movie({ movieId: 545892907 })" class="list-group-item">Titanic</a>
+            <a ui-sref="movie({ movieId: 315584649 })" class="list-group-item">Wayne's World</a>
+            <a ui-sref="movie({ movieId: 975793398 })" class="list-group-item">Star Wars: The Empire Strikes Back</a>
+          </div>
+
+          <h4 class="gray">TV Shows</h4>
+
+          <div class="list-group">
+            <a ui-sref="tvshow({ seasonId: 278750007 })" class="list-group-item">Rome</a>
+            <a ui-sref="tvshow({ seasonId: 190066649 })" class="list-group-item">Grey's Anatomy</a>
+          </div>
+
+          <h4 class="gray">Actor</h4>
+
+          <div class="list-group">
+            <a ui-sref="actor({ actorId: 253584821 })" class="list-group-item">John Sawyer</a>
+            <a ui-sref="actor({ actorId: 95221335 })" class="list-group-item"></a>
+            <a ui-sref="actor({ actorId: 2082973 })" class="list-group-item"></a>
+          </div>
+
         </div>
     </div>
 
