@@ -13,6 +13,7 @@ angular.module('cornpub')
         id: $stateParams.movieId
       }, function(data) {
         $scope.movie = data.results[0];
+        $scope.movie.artworkUrl500 = $scope.movie.artworkUrl100.substring(0, $scope.movie.artworkUrl100.length - 13)+"500x500bb.jpg";
       }
     );
 
