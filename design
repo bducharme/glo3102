@@ -2,3 +2,5 @@ Sur la page d'accueil, une liste de films, tvshows et d'acteurs est présente po
 
 La fonction de search est fonctionnelle, mais aucun filtre/ordre n'est implanté.
 
+Pour naviguer dans la page d'acteur, simplement cliquer dans le menu sur l'onglet "Content" et dans le sous-menu sur "Actors".
+Vous y verrez toutes les informations disponibles sur l'acteur et la liste des films pour la suite.
