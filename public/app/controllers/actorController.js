@@ -1,30 +1,25 @@
 angular.module('cornpub')
-    .controller('ActorCtrl', function ($scope, ActorFactory) {
+    .controller('ActorCtrl', function ($scope, $stateParams, ActorFactory) {
         'use strict';
 
         var actorObject = {};
         $scope.actor = {};
 
+        actorObject= ActorFactory.get({
+            id: $stateParams.actorId
+        }, function () {
+            $scope.actor = actorObject.results[0];
+        });
 
-        $scope.getActor = function (actorId) {
-            actorObject= ActorFactory.get({
-                id: actorId
-            }, function () {
-                $scope.actor = actorObject.results[0];
-            });
-        };
-
-    }).controller('ActorMoviesCtrl', function ($scope, ActorMoviesFactory) {
+    }).controller('ActorMoviesCtrl', function ($scope, $stateParams, ActorMoviesFactory) {
         'use strict';
         var movies = {};
         $scope.actorMovies = {};
 
-        $scope.getActorMovies = function(actorId) {
-            movies=ActorMoviesFactory.get({
-                id: actorId
-            }, function () {
-                $scope.actorMovies = movies.results;
-            });
-        };
+        movies=ActorMoviesFactory.get({
+            id: $stateParams.actorId
+        }, function () {
+            $scope.actorMovies = movies.results;
+        });
 
     });

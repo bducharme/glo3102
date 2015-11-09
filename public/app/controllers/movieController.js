@@ -1,7 +1,7 @@
 angular.module('cornpub')
-  .factory('movieFactory', function ($resource) {
+  .factory('movieFactory', function ($resource, baseURL) {
     'use strict';
-    return $resource('http://localhost:3000/unsecure/movies/:id', {}, {
+    return $resource(baseURL +'/unsecure/movies/:id', {}, {
       get: {method: 'GET', params: {id: '@id'}}
     });
   });
