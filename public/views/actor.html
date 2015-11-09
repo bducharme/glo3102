@@ -3,13 +3,13 @@
 <div class="container-fluid main-container">
 
     <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12" ng-controller="ActorCtrl" ng-init="getActor(95221335)">
+        <div class="col-md-12 col-sm-12 col-xs-12" ng-controller="ActorCtrl">
             <h1>{{actor.artistName}}</h1>
             <h4>{{actor.primaryGenreName}}</h4>
         </div>
     </div>
 
-    <div class="movies" ng-controller="ActorMoviesCtrl" ng-init="getActorMovies(95221335)">
+    <div class="movies" ng-controller="ActorMoviesCtrl">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <h2>Movies</h2>
@@ -17,11 +17,11 @@
         </div>
         <div class="row" ng-repeat="movie in actorMovies">
             <div class="movie-image col-md-2 col-sm-2 col-xs-12">
-                <img class="thumbnail" src="{{movie.artworkUrl100}}"/>
+                <img class="thumbnail" ng-src="{{movie.artworkUrl100}}"/>
             </div>
             <div class="col-md-6 col-sm-9 col-xs-12">
                 <div class="panel panel-info">
-                    <div class="panel-heading">{{movie.trackName}}</div>
+                    <div class="panel-heading" ui-sref="movie({movieId: movie.trackId})">{{movie.trackName}}</div>
                     <div class="panel-body">
                         <h5>Release date : {{movie.releaseDate | date:'yyyy-MM-dd' }}</h5>
                         <p>{{movie.longDescription}}</p>
