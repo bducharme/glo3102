@@ -1,4 +1,4 @@
-Commentaire:
+Sur la page d'accueil, une liste de films, tvshows et d'acteurs est présente pour voir chacune des pages. 
 
-1. Dans la page actor l'icon d'itune n'est pas présente car il n'existe pas de lien vers un actor précis dans Itune.
-    Le lien fut remplacé vers un lien Imdb d'acteur.
+La fonction de search est fonctionnelle, mais aucun filtre/ordre n'est implanté.
+
