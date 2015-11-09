@@ -1,5 +1,5 @@
 angular.module('cornpub')
-  .controller('WatchlistsCtrl', function ($scope, WatchlistsFactory, WatchlistFactory, WatchlistMovieFactory) {
+  .controller('WatchlistsCtrl', function ($scope, WatchlistsFactory, WatchlistMovieFactory) {
     'use strict';
 
     $scope.watchlists = [];
@@ -26,27 +26,29 @@ angular.module('cornpub')
       }
     };
 
-    $scope.createWatchlist = function () {
-      WatchlistsFactory.create($scope.newWatchlist,
-        function (createdWatchlist) {
-          $scope.watchlists.unshift(createdWatchlist);
-          $scope.toggleAddMode();
-        });
+    $scope.createWatchlist = function (isNewWatchlistValid) {
+      if (isNewWatchlistValid) {
+        WatchlistsFactory.create($scope.newWatchlist,
+          function (createdWatchlist) {
+            $scope.watchlists.unshift(createdWatchlist);
+            $scope.toggleAddMode();
+          });
+      }
     };
 
     $scope.getWatchlist = function (watchlistId) {
-      WatchlistFactory.get({
+      WatchlistsFactory.get({
         id: watchlistId
       });
     };
 
     $scope.updateWatchlist = function (watchlist) {
       watchlist.editMode = false;
-      WatchlistFactory.update(watchlist);
+      WatchlistsFactory.update(watchlist);
     };
 
     $scope.deleteWatchlist = function (watchlist) {
-      WatchlistFactory.delete({
+      WatchlistsFactory.remove({
         id: watchlist.id
       }, function () {
         var index = $scope.watchlists.indexOf(watchlist);
@@ -65,9 +67,9 @@ angular.module('cornpub')
       }
     };
 
-    $scope.saveOnEnter = function (watchlist, args) {
+    $scope.saveOnEnter = function (watchlist, args, isNewWatchlistValid ) {
       if (args.keyCode == 13) {
-        $scope.createWatchlist();
+        $scope.createWatchlist(isNewWatchlistValid);
         watchlist.expanded = false;
       }
     };

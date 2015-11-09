@@ -1,5 +1,7 @@
 ﻿<div ng-include="'template/navbar.html'"></div>
 
+<div ng-show="" ng-include="'template/watchlist-select-modal.html'"></div>
+
 <div class="container-fluid main-container">
     <div class="row topPage">
     </div>
@@ -7,7 +9,14 @@
         <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
-                    <h1 class="row">Fifty Shades Of Grey</h1>
+
+                  <div class="alert" role="alert" ng-show="alert">
+                    <div>
+                      <uib-alert close="closeAlert()" type="success">{{movie.trackName}} was successfully added!</uib-alert>
+                    </div>
+                  </div>
+
+                    <h1 class="row">{{movie.trackName}}</h1>
 
                     <div class="row">
                         <ul class="list-inline pointedList">
@@ -17,9 +26,12 @@
                     </div>
                 </div>
                 <div id="mediaControl" class="col-md-4 col-sm-6 col-xs-12">
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#preview">
-                        Bande annonce
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#preview">
+                        Trailer
                     </button>
+                  <button type="button" class="btn btn-success" ng-controller="AddMovieModalCtrl" ng-click="addToWatchlist(movie)">
+                      Add to Watchlist
+                  </button>
                     <div id="preview" class="modal fade">
                         <div class="modal-dialog">
                             <div class="modal-content">

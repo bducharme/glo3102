@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h3 class="modal-title">Add {{movie.trackName}} to :</h3>
+</div>
+<div class="modal-body">
+  <ul>
+    <li ng-repeat="watchlist in watchlists">
+      <a href="#" ng-click="$event.preventDefault(); selected.watchlist = watchlist">{{ watchlist.name }}</a>
+    </li>
+  </ul>
+  Selected: <b>{{ selected.watchlist.name }}</b>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+  <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>

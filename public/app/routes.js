@@ -15,7 +15,8 @@ angular.module('cornpub')
       })
       .state('movie', {
         url: '/movie',
-        templateUrl: 'views/movie.html'
+        templateUrl: 'views/movie.html',
+        controller: 'movieController'
       })
       .state('search', {
         url: '/search',
