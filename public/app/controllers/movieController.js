@@ -7,11 +7,11 @@ angular.module('cornpub')
   });
 
 angular.module('cornpub')
-  .controller('movieController', function ($scope, $uibModal, movieFactory) {
+  .controller('movieController', function ($scope, $stateParams, $uibModal, movieFactory) {
 
-    movieFactory.get(
-      {id: '265727087'},
-      function(data) {
+    movieFactory.get({
+        id: $stateParams.movieId
+      }, function(data) {
         $scope.movie = data.results[0];
       }
     );

@@ -14,7 +14,7 @@ angular.module('cornpub')
         controller: 'ActorCtrl'
       })
       .state('movie', {
-        url: '/movie',
+        url: '/movie/:movieId',
         templateUrl: 'views/movie.html',
         controller: 'movieController'
       })
