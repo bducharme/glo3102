@@ -9,9 +9,8 @@ angular.module('cornpub')
         templateUrl: 'views/home.html'
       })
       .state('actor', {
-        url: '/actor',
-        templateUrl: 'views/actor.html',
-        controller: 'ActorCtrl'
+        url: '/actor/:actorId',
+        templateUrl: 'views/actor.html'
       })
       .state('movie', {
         url: '/movie/:movieId',
