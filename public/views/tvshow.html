@@ -27,7 +27,7 @@
                                     <h4 class="modal-title">{{TVshowInfo.artistName}} - Bande Annonce</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <iframe src="{{videoLink1}}" width=100% height="315" frameborder="0" allowfullscreen></iframe>
+                                    <iframe ng-src="{{videoLink | trustThisUrl}}" width=100% height="315" frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>

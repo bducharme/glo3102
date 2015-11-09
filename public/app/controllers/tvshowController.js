@@ -9,6 +9,7 @@ angular.module('cornpub')
         }, function(season) {
             var seasonResult = [];
             var showName = season.results[0].artistName + ", Season ";
+            $scope.getVideoLink(season.results[0].artistName);
 
             for(var seasons = 1; seasons < season.results.length; seasons++) {
                 $scope.getEpisodesList(season.results[seasons].collectionId);
@@ -36,10 +37,13 @@ angular.module('cornpub')
             });
         };
 
-        PreviewService.get({
+        $scope.getVideoLink = function(videoName) {
+            PreviewService.get({
+                mediaName: videoName
+            }, function(preview){
+                $scope.videoLink = "http://www.youtube.com/embed/" + preview.items[0].id.videoId;
+            });
+        }
 
-        }, function(preview){
-            $scope.videoLink1 = "https://www.youtube.com/embed/" + preview.items[0].id.videoId;
-        });
 
     });
