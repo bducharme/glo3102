@@ -10,22 +10,34 @@ angular.module('cornpub')
       })
       .state('actor', {
         url: '/actor/:actorId',
-        templateUrl: 'views/actor.html'
+        templateUrl: 'views/actor.html',
+        resolve: {
+          loginRequired: loginRequired
+        }
       })
       .state('movie', {
         url: '/movie/:movieId',
         templateUrl: 'views/movie.html',
-        controller: 'movieController'
+        controller: 'movieController',
+        resolve: {
+          loginRequired: loginRequired
+        }
       })
       .state('search', {
         url: '/search',
         templateUrl: 'views/search.html',
-        controller: 'SearchCtrl'
+        controller: 'SearchCtrl',
+        resolve: {
+          loginRequired: loginRequired
+        }
       })
       .state('tvshow', {
         url: '/tvshow/:seasonId',
         templateUrl: 'views/tvshow.html',
-        controller: 'TVshowCtrl'
+        controller: 'TVshowCtrl',
+        resolve: {
+          loginRequired: loginRequired
+        }
       })
       .state('watchlists', {
         url: '/watchlists',
