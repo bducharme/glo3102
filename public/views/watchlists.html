@@ -88,7 +88,7 @@
                       <span>({{movie.releaseDate | date :"yyyy"}})</span>
                       <p>{{movie.contentAdvisoryRating}} | {{movie.primaryGenreName}} | {{movie.trackTimeMillis | millisToMin | date:'H:mm'}}min</p>
                       <div ng-controller="RatingCtrl">
-                        <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+                        <uib-rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></uib-rating>
                       </div>
                     </div>
                     <div class="removeButton">

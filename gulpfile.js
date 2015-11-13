@@ -13,7 +13,7 @@ gulp.task('default', function () {
             '!./public/bower_components/angular-bootstrap/ui-bootstrap.min.js',
             './public/bower_components/angular*/**/*.min.js',
             './public/bower_components/angular-utils-pagination/dirPagination.js',
-            './public/bower_components/toastr/**/*.min.js',
+            './public/bower_components/satellizer/*.min.js',
             './public/bower_components/bootstrap/fonts/**.*',
             './public/app/**/*.js'],
             {read: false});
