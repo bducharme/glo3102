@@ -27,7 +27,7 @@
                 <ul class="nav navbar-nav">
                     <li><a ui-sref="watchlists">Watchlists</a></li>
                     <li ng-if="isAuthenticated()">
-                        <a href="#"><img  class="img img-circle navbar-icon" src="http://www.gravatar.com/avatar/fdsdfs?s=20">{{user.name}}</a>
+                        <a href="#"><img class="img img-circle navbar-icon" ng-src="http://www.gravatar.com/avatar/{{user.md5}}?s=20">{{user.name}}</a>
                     </li>
                 </ul>
 

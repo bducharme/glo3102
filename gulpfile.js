@@ -15,6 +15,7 @@ gulp.task('default', function () {
             './public/bower_components/angular-utils-pagination/dirPagination.js',
             './public/bower_components/satellizer/*.min.js',
             './public/bower_components/bootstrap/fonts/**.*',
+            './public/bower_components/angular-md5/angular-md5.min.js',
             './public/app/**/*.js'],
             {read: false});
 

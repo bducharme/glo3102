@@ -1,4 +1,4 @@
-angular.module('cornpub', ['ngResource', 'ngAnimate', 'ngMessages', 'ui.router', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'satellizer'])
+angular.module('cornpub', ['ngResource', 'ngAnimate', 'ngMessages', 'ui.router', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'satellizer', 'angular-md5'])
   .constant('baseURL', "http://localhost:3000")
   //.constant('baseURL', "https://umovie.herokuapp.com")
 
