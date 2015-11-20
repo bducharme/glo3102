@@ -5,10 +5,7 @@ angular.module('cornpub')
     $scope.signup = function() {
       $auth.signup($scope.user)
         .then(function() {
-
-          //no token for api?
-
-
+          $state.go('login');
         }).catch(function(response) {
           $scope.serverErrors = {
             "emailTaken": response.data
