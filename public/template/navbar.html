@@ -26,17 +26,27 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-umovie">
                 <ul class="nav navbar-nav">
                     <li><a ui-sref="watchlists">Watchlists</a></li>
-                    <li>
-                        <a href="#"><img  class="img img-circle navbar-icon" src="http://www.gravatar.com/avatar/fdsdfs?s=20">User123123</a>
+                    <li ng-if="isAuthenticated()">
+                        <a href="#"><img class="img img-circle navbar-icon" ng-src="http://www.gravatar.com/avatar/{{user.md5}}?s=20">{{user.name}}</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="visible-xs"><span class="glyphicon glyphicon-cog navbar-icon"></span>Settings</a>
-                        <a class="glyphicon glyphicon-cog hidden-xs"></a>
+
+                  <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
+                    <li><a ui-sref="logout">Logout</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav pull-right">
+                    <li ng-if="isAuthenticated()">
+                      <a class="visible-xs"><span class="glyphicon glyphicon-cog navbar-icon"></span>Settings</a>
+                      <a class="glyphicon glyphicon-cog hidden-xs"></a>
                     </li>
-                    <li><a href="#">Log out</a></li>
-                </ul>
+                  </ul>
+                  <ul ng-if="isAuthenticated()"class="nav navbar-nav pull-right">
+                    <li><a ui-sref="profile">Profile</a></li>
+                  </ul>
+                  <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
+                    <li><a ui-sref="login">Login</a></li>
+                    <li><a ui-sref="signup">Sign up</a></li>
+                  </ul>
             </div>
         </div>
     </nav>
