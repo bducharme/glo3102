@@ -1,7 +1,7 @@
 angular.module('cornpub')
     .factory('SearchService', function ($resource, baseURL) {
         'use strict';
-        return $resource(baseURL + '/unsecure/search', {}, {
+        return $resource(baseURL + '/search', {}, {
             query: { method: 'GET' }
         });
     })

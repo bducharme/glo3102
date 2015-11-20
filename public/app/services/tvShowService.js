@@ -11,7 +11,7 @@ angular.module('filters', []).filter('trustThisUrl', ['$sce', function($sce) {
 angular.module('cornpub')
   .factory('TVshowService', function ($resource, baseURL) {
     'use strict';
-    return $resource(baseURL + '/unsecure/tvshows/season/:id', {}, {
+    return $resource(baseURL + '/tvshows/season/:id', {}, {
       get: { method: 'GET', params: {id: '@id'}}
     });
   })
@@ -27,7 +27,7 @@ angular.module('cornpub')
     };
   }])
   .factory('TVshowServiceEpisodes', function($resource, baseURL){
-     return $resource(baseURL + '/unsecure/tvshows/season/:id/episodes', {}, {
+     return $resource(baseURL + '/tvshows/season/:id/episodes', {}, {
       get: { method: 'GET', params: {id: '@id'}}
     });
   });
