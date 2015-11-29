@@ -39,11 +39,6 @@ angular.module('cornpub')
           loginRequired: loginRequired
         }
       })
-      .state('watchlists', {
-        url: '/watchlists',
-        templateUrl: 'views/watchlists.html',
-        controller: 'WatchlistsCtrl'
-      })
       .state('login', {
         url: '/login',
         templateUrl: 'views/user/login.html',

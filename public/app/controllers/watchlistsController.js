@@ -5,6 +5,7 @@ angular.module('cornpub')
     $scope.watchlists = [];
     $scope.newWatchlist = { name: '' };
     $scope.addMode = false;
+    $scope.watchlist = {};
 
     $scope.toggleAddMode = function () {
       $scope.addMode = !$scope.addMode;

@@ -1,5 +1,5 @@
 angular.module('cornpub')
-    .controller('NavbarCtrl', function ($scope, $auth, SearchStringService, Account) {
+    .controller('NavbarCtrl', function ($scope, $auth, SearchStringService, Account, md5) {
         'use strict';
 
         $scope.SearchStringService = SearchStringService;
@@ -11,7 +11,8 @@ angular.module('cornpub')
         if ($auth.isAuthenticated()) {
           Account.get(function(response) {
             $scope.user = response;
+            $scope.user.md5 = md5.createHash(response.email);
+            $scope.$emit('user', $scope.user);
           });
         }
-
     });

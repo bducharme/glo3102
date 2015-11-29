@@ -1,11 +1,12 @@
 angular.module('cornpub')
   .controller('AddMovieModalCtrl', function ($scope, $uibModal, WatchlistMovieFactory, WatchlistsFactory) {
 
-    $scope.addToWatchlist = function(movie) {
+    $scope.addToWatchlist = function(movie, user) {
       var modalInstance = $uibModal.open({
         templateUrl: 'template/watchlist-select-modal.html',
         controller: 'ModalInstanceCtrl',
         resolve: {
+          user: user,
           movie: movie,
           watchlists: function () {
             return WatchlistsFactory.query();
@@ -23,8 +24,8 @@ angular.module('cornpub')
     };
   })
 
-  .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, watchlists, movie) {
-
+  .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, watchlists, movie, user) {
+    $scope.user = user;
     $scope.movie = movie;
     $scope.watchlists = watchlists;
     $scope.selected = {

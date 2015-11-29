@@ -3,11 +3,12 @@
 </div>
 <div class="modal-body">
   <ul>
-    <li ng-repeat="watchlist in watchlists">
+    <li ng-repeat="watchlist in watchlists | filter:{owner: {id: user.id}}">
       <a href="#" ng-click="$event.preventDefault(); selected.watchlist = watchlist">{{ watchlist.name }}</a>
     </li>
   </ul>
   Selected: <b>{{ selected.watchlist.name }}</b>
+
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>

@@ -1,10 +1,9 @@
 angular.module('cornpub')
-  .controller('ProfileCtrl', function ($scope, $auth, Account, md5) {
+  .controller('ProfileCtrl', function ($scope) {
     'use strict';
 
-    Account.get(function(response) {
-      $scope.user = response;
-      $scope.user.md5 = md5.createHash(response.email);
-    });
+    $scope.$on('user', function(event, user) {
+      $scope.user = user;
+    })
 
   });

@@ -1,0 +1,95 @@
+<h1>Watchlists</h1>
+
+<div ng-show="addMode">
+    <div class="btn-toolbar">
+      <div class="btn-group">
+        <i class="btn glyphicon glyphicon-floppy-disk" ng-click="createWatchlist(addForm.newWatchlist.$valid)" title="Create" ng-disabled="addForm.$invalid"></i>
+        <i class="btn glyphicon glyphicon-remove" ng-click="toggleAddMode()" title="Cancel"></i>
+      </div>
+    </div>
+    <form name="addForm" method="post">
+      <div class="form-group has-feedback" ng-class="{ 'has-error' : addForm.newWatchlist.$invalid && addForm.newWatchlist.$dirty }">
+        <input required ng-maxlength="40" type="text" ng-model="newWatchlist.name" class="form-control" name="newWatchlist" placeholder="new watchlist name..." ng-keydown="saveOnEnter(watchlist, $event, addForm.newWatchlist.$valid)" />
+        <span class="form-control-feedback"></span>
+        <div class="help-block text-danger" ng-if="addForm.newWatchlist.$dirty" >
+          <span class="error" ng-show="addForm.newWatchlist.$error.required">
+          A name is required!</span>
+          <span class="error" ng-show="addForm.newWatchlist.$error.maxlength">
+          The name is too long!</span>
+        </div>
+      </div>
+    </form>
+</div>
+
+<table class="table table-custom table-responsive table-bordered table-hover">
+  <thead>
+    <tr class="panel-title">
+      <th>
+        <div class="btn-toolbar"><i class="btn glyphicon glyphicon-plus" ng-click="toggleAddMode()" title="Add" ng-hide="addMode"></i></div>
+        <div class="btn-toolbar"><i class="btn glyphicon glyphicon-minus" ng-click="toggleAddMode()" title="Cancel" ng-show="addMode"></i></div>
+      </th>
+      <th>Watchlist Name</th>
+      <th>Movie Count</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="watchlist in watchlists | filter:{owner: {id: user.id}}">
+    <tr>
+      <td>
+        <div class="btn-toolbar" ng-hide="watchlist.editMode">
+          <div class="btn-group">
+            <i class="btn glyphicon glyphicon-edit" ng-click="toggleEditMode(watchlist)" title="Edit"></i>
+            <i class="btn glyphicon glyphicon-trash" ng-click="deleteWatchlist(watchlist)" title="Delete"></i>
+          </div>
+        </div>
+
+        <div class="btn-toolbar" ng-show="watchlist.editMode">
+          <div class="btn-group">
+            <span class="btn glyphicon glyphicon-floppy-disk" ng-click="updateWatchlist(watchlist)" title="Save" ng-disabled="editForm.$invalid"></span>
+            <span class="btn glyphicon glyphicon-remove" ng-click="toggleEditMode(watchlist)" title="Cancel"></span>
+          </div>
+        </div>
+      </td>
+
+      <td ng-click="watchlist.expanded = !watchlist.expanded">
+        <span ng-hide="watchlist.editMode" >
+          <i class="glyphicon" ng-class="{'glyphicon-chevron-down': watchlist.expanded, 'glyphicon-chevron-right': !watchlist.expanded}"></i>
+          {{watchlist.name}}
+        </span>
+        <form name="editForm">
+          <input ng-model="watchlist.name" ng-show="watchlist.editMode" required ng-keydown="updateOnEnter(watchlist, $event)" class="form-control" />
+        </form>
+      </td>
+      <td>{{watchlist.movies.length}}</td>
+    </tr>
+
+    <tr ng-if="watchlist.expanded && !watchlist.editMode">
+      <td colspan="3">
+        <a ui-sref="search"><h5>Search our collections to add
+          <ng-pluralize count="watchlist.movies.length" when="{'0': ' the first movie ', 'one': ' more movies' ,  'other': ' more movies '}"></ng-pluralize>
+          to this watchlist!
+        </h5></a>
+        <ul class="movieList" ng-repeat="movie in watchlist.movies">
+          <li>
+            <div>
+              <div class="artwork"><img ng-src="{{movie.artworkUrl100}}"></div>
+              <div class="movie-information">
+                <h3>{{movie.trackName}}</h3>
+                <span>({{movie.releaseDate | date :"yyyy"}})</span>
+                <p>{{movie.contentAdvisoryRating}} | {{movie.primaryGenreName}} | {{movie.trackTimeMillis | millisToMin | date:'H:mm'}}min</p>
+                <div ng-controller="RatingCtrl">
+                  <uib-rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></uib-rating>
+                </div>
+              </div>
+              <div class="removeButton">
+                <button type="button" class="btn btn-danger" ng-click="deleteMovie(watchlist, movie)">
+                  Remove
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

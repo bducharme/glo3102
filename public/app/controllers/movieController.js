@@ -25,4 +25,8 @@ angular.module('cornpub')
       $scope.alert = true;
     });
 
+    $scope.$on('user', function(event, user) {
+      $scope.user = user;
+    });
+
   });
