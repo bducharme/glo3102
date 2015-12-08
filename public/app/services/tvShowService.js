@@ -17,7 +17,7 @@ angular.module('cornpub')
   })
   .factory('PreviewService', function ($resource, baseURL) {
     'use strict';
-    return $resource('https://www.googleapis.com/youtube/v3/search?part=snippet&q=:mediaName+trailer&key=AIzaSyCtNyLr6I_QJ5nxfO4LsJRP4Ko445wEoSI', {}, {
+    return $resource('https://www.googleapis.com/youtube/v3/search?part=snippet&q=:mediaName+trailer&key=AIzaSyDnPPr6ygLS7nY2YQ7aaMvk47l2OfFNHZI', {}, {
       get: { method: 'GET', params: {mediaName: '@mediaName'}}
     });
   })
