@@ -15,10 +15,10 @@ angular.module('cornpub')
       get: { method: 'GET', params: {id: '@id'}}
     });
   })
-  .factory('PreviewService', function ($resource, baseURL) {
+  .factory('PreviewService', function ($resource) {
     'use strict';
     return $resource('https://www.googleapis.com/youtube/v3/search?part=snippet&q=:mediaName+trailer&key=AIzaSyDnPPr6ygLS7nY2YQ7aaMvk47l2OfFNHZI', {}, {
-      get: { method: 'GET', params: {mediaName: '@mediaName'}}
+      get: { method: 'GET', params: {mediaName: '@mediaName'}, skipAuthorization: true}
     });
   })
   .filter('trustThisUrl', ['$sce', function($sce) {
