@@ -10,11 +10,19 @@ angular.module('cornpub')
         );
 
         $scope.openPreview = function () {
-            $uibModal.open({
-                templateUrl: 'template/preview-modal.html',
-            });
+          $uibModal.open({
+            templateUrl: 'template/preview-modal.html',
+            controller: 'Instance',
+            resolve: {
+              movie: function () {
+                return $scope.movie;
+              },
+              videoLink: function () {
+                return $scope.videoLink;
+              }
+            }
+          });
         };
-
 
         $scope.closeAlert = function () {
             $scope.alert = false;
@@ -35,6 +43,11 @@ angular.module('cornpub')
                 $scope.videoLink = "http://www.youtube.com/embed/" + preview.items[0].id.videoId;
             });
         }
-    });
+    })
+
+  .controller('Instance', function ($scope, movie, videoLink) {
+    $scope.movie = movie;
+    $scope.videoLink = videoLink;
+  });
 
 
