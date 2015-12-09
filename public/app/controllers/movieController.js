@@ -1,5 +1,5 @@
 angular.module('cornpub')
-    .controller('movieController', function ($scope, $stateParams, movieFactory, previewService) {
+    .controller('movieController', function ($scope, $uibModal, $stateParams, movieFactory, previewService) {
         movieFactory.get({
                 id: $stateParams.movieId
             }, function (data) {
@@ -8,6 +8,13 @@ angular.module('cornpub')
                 $scope.getVideoLink($scope.movie.trackName);
             }
         );
+
+        $scope.openPreview = function () {
+            $uibModal.open({
+                templateUrl: 'template/preview-modal.html',
+            });
+        };
+
 
         $scope.closeAlert = function () {
             $scope.alert = false;
@@ -21,10 +28,10 @@ angular.module('cornpub')
             $scope.user = user;
         });
 
-        $scope.getVideoLink = function(videoName) {
+        $scope.getVideoLink = function (videoName) {
             previewService.get({
-                mediaName: videoName+'official trailer'
-            }, function(preview){
+                mediaName: videoName + 'official trailer'
+            }, function (preview) {
                 $scope.videoLink = "http://www.youtube.com/embed/" + preview.items[0].id.videoId;
             });
         }
