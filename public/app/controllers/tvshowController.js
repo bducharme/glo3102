@@ -45,5 +45,19 @@ angular.module('cornpub')
             });
         }
 
+        $scope.selectEpisode = function(episode) {
+            $scope.seasonNameToShow = episode.trackCensoredName;
+            $scope.episodeToShow = episode.trackName;
+            $scope.episodeDescription = episode.longDescription;
+            $scope.episodeDuration = $scope.milliToTime(episode.trackTimeMillis);
+            $scope.getVideoLink(episode.trackCensoredName + "-" + episode.trackName);
+            $('#episodeModal').modal('show');
+        }
 
+        $scope.milliToTime = function(timeInMilli) {
+            var milliseconds = timeInMilli % 1000;
+            var seconds = Math.floor((timeInMilli / 1000) % 60);
+            var minutes = Math.floor((timeInMilli / (60 * 1000)) % 60);
+            return minutes + ":" + seconds;
+        }
     });
