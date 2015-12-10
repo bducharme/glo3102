@@ -24,8 +24,8 @@
 <table class="table table-custom table-responsive table-bordered table-hover">
   <thead>
     <tr class="panel-title">
-      <th>
-        <div class="btn-toolbar"><i class="btn glyphicon glyphicon-plus" ng-click="toggleAddMode()" title="Add" ng-hide="addMode"></i></div>
+      <th ng-hide="hideEdit">
+        <div ng-hide="hideEdit" class="btn-toolbar"><i class="btn glyphicon glyphicon-plus" ng-click="toggleAddMode()" title="Add" ng-hide="addMode"></i></div>
         <div class="btn-toolbar"><i class="btn glyphicon glyphicon-minus" ng-click="toggleAddMode()" title="Cancel" ng-show="addMode"></i></div>
       </th>
       <th>Watchlist Name</th>
@@ -34,7 +34,7 @@
   </thead>
   <tbody ng-repeat="watchlist in watchlists | filter:{owner: {id: user.id}}">
     <tr>
-      <td>
+      <td ng-hide="hideEdit">
         <div class="btn-toolbar" ng-hide="watchlist.editMode">
           <div class="btn-group">
             <i class="btn glyphicon glyphicon-edit" ng-click="toggleEditMode(watchlist)" title="Edit"></i>
@@ -64,7 +64,7 @@
 
     <tr ng-if="watchlist.expanded && !watchlist.editMode">
       <td colspan="3">
-        <a ui-sref="search"><h5>Search our collections to add
+        <a ui-sref="search"><h5 ng-hide="hideEdit">Search our collections to add
           <ng-pluralize count="watchlist.movies.length" when="{'0': ' the first movie ', 'one': ' more movies' ,  'other': ' more movies '}"></ng-pluralize>
           to this watchlist!
         </h5></a>
@@ -80,7 +80,7 @@
                   <uib-rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></uib-rating>
                 </div>
               </div>
-              <div class="removeButton">
+              <div ng-hide="hideEdit" class="removeButton">
                 <button type="button" class="btn btn-danger" ng-click="deleteMovie(watchlist, movie)">
                   Remove
                 </button>

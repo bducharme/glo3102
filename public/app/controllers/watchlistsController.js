@@ -1,11 +1,16 @@
 angular.module('cornpub')
-  .controller('WatchlistsCtrl', function ($scope, WatchlistsFactory, WatchlistMovieFactory) {
+  .controller('WatchlistsCtrl', function ($scope, $stateParams, WatchlistsFactory, WatchlistMovieFactory) {
     'use strict';
 
     $scope.watchlists = [];
     $scope.newWatchlist = { name: '' };
     $scope.addMode = false;
+    $scope.hideEdit = false;
     $scope.watchlist = {};
+
+    if ($stateParams.userId !== '') {
+      $scope.hideEdit = true;
+    }
 
     $scope.toggleAddMode = function () {
       $scope.addMode = !$scope.addMode;
