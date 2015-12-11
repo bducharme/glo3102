@@ -1,0 +1,13 @@
+.search-image {
+    max-width: 100px;
+    max-height: 80px;
+    padding: 5px;
+}
+.search-control {
+    padding: 10px 0px 10px 0px;
+}
+.search-user-icon {
+    width: 40px;
+    text-align: center;
+    padding: 2px;
+}
