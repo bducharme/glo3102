@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-umovie">
                 <ul class="nav navbar-nav">
                     <li ng-if="isAuthenticated()">
-                        <a ui-sref="profile"><img class="img img-circle navbar-icon" ng-src="http://www.gravatar.com/avatar/{{user.md5}}?s=20">{{user.name}}</a>
+                        <a ui-sref="profile({userId: ''})"><img class="img img-circle navbar-icon" ng-src="http://www.gravatar.com/avatar/{{user.md5}}?s=20">{{user.name}}</a>
                     </li>
                 </ul>
 
@@ -40,7 +40,7 @@
                     </li>
                   </ul>
                   <ul ng-if="isAuthenticated()"class="nav navbar-nav pull-right">
-                    <li><a ui-sref="profile">Profile</a></li>
+                    <li><a ui-sref="profile({userId: ''})">Profile</a></li>
                   </ul>
                   <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
                     <li><a ui-sref="login">Login</a></li>
