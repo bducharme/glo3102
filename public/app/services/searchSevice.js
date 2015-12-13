@@ -5,6 +5,12 @@ angular.module('cornpub')
             query: { method: 'GET' }
         });
     })
+    .factory('SearchServiceActor', function ($resource, baseURL) {
+        'use strict';
+        return $resource(baseURL + '/search/actors', {}, {
+            query: { method: 'GET' }
+        });
+    })
     .factory('SearchServiceUser', function ($resource, baseURL) {
         'use strict';
         return $resource(baseURL + '/search/users', {}, {
