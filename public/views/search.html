@@ -26,7 +26,7 @@
                     </td>
                     <td>
                         <div ng-switch on="result.wrapperType">
-                            <a ng-switch-when="collection" ui-sref="tvshow({seasonId: result.trackId})">
+                            <a ng-switch-when="collection" ui-sref="tvshow({seasonId: result.artistId})">
                                 {{result.collectionName}}
                             </a>
                             <a ng-switch-when="track" ui-sref="movie({movieId: result.trackId})">
