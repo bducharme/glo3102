@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div id="mediaControl" class="col-md-4 col-sm-6 col-xs-12">
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#preview">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#preview" ng-click="getVideoLink(TVshowInfo.artistName)">
                         Trailer
                     </button>
                     <div id="preview" class="modal fade">
@@ -73,11 +73,16 @@
                         </div>
                         <div class="modal-body">
                             <iframe ng-src="{{videoLink | trustThisUrl}}" width=100% height="315" frameborder="0" allowfullscreen></iframe>
-                            <h3>Summary</h3>
-                            <h5>Durarion : {{episodeDuration}}</h5>
-                            <p>{{episodeDescription}}</p>
-                        </div>
-                        <div class="description">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h3>Summary</h3>
+                                    <h5>Durarion : {{episodeDuration}}</h5>
+                                    <p>{{episodeDescription}}</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <img ng-src="{{cover}}">
+                                </div>
+                            </div>
 
                         </div>
                     </div>

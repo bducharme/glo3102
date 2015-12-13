@@ -46,11 +46,12 @@ angular.module('cornpub')
         }
 
         $scope.selectEpisode = function(episode) {
-            $scope.seasonNameToShow = episode.trackCensoredName;
+            $scope.seasonNameToShow = episode.collectionName;
             $scope.episodeToShow = episode.trackName;
             $scope.episodeDescription = episode.longDescription;
             $scope.episodeDuration = $scope.milliToTime(episode.trackTimeMillis);
-            $scope.getVideoLink(episode.trackCensoredName + "-" + episode.trackName);
+            $scope.getVideoLink(episode.collectionName + "-" + episode.trackName);
+            $scope.cover = episode.artworkUrl100;
             $('#episodeModal').modal('show');
         }
 

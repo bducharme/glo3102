@@ -48,6 +48,10 @@ body {
     height:40px;
 }
 
+.modal-body {
+    color: #f6f7fb;
+}
+
 .main-container {
     padding-top: 100px;
     padding-left: 5%;
