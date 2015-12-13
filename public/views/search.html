@@ -4,46 +4,88 @@
     <div class="row topPage"></div>
     <div class="row">
         <div class="col-md-8 col-sm-8 col-xs-12">
-            <h1>Search</h1>
+            <div>
+                <h1>Search</h1>
+                <p>
+                    <ng-pluralize count="searchResults[0].resultCount" when="{'0': 'No results', 'one': '1 result', 'other': '{} results'}"></ng-pluralize>
+                </p>
+                <div class="btn-group search-control" data-toggle="buttons">
+                    <label class="btn btn-default" ng-click="myFilter.wrapperType='track'">
+                        <input type="radio" name="typeFilter" id="typeFilter1" autocomplete="off">Movies
+                    </label>
+                    <label class="btn btn-default" ng-click="myFilter.wrapperType='collection'">
+                        <input type="radio" name="typeFilter" id="typeFilter2" autocomplete="off">TvShows
+                    </label>
+                    <label class="btn btn-default" ng-click="myFilter.wrapperType='artist'">
+                        <input type="radio" name="typeFilter" id="typeFilter3" autocomplete="off">Actors
+                    </label>
+                    <label class="btn btn-default active" ng-click="myFilter={primaryGenreName:myFilter.primaryGenreName}">
+                        <input type="radio" name="typeFilter" id="typeFilter4" autocomplete="off" checked>None
+                    </label>
+                </div>
+                <div class="btn-group search-control" data-toggle="buttons">
+                    <label class="btn btn-default" ng-click="myFilter.primaryGenreName='Comedy'">
+                        <input type="radio" name="genderFilter" id="genderFilter1" autocomplete="off">Comedy
+                    </label>
+                    <label class="btn btn-default" ng-click="myFilter.primaryGenreName='Horror'">
+                        <input type="radio" name="genderFilter" id="genderFilter2" autocomplete="off">Horror
+                    </label>
+                    <label class="btn btn-default" ng-click="myFilter.primaryGenreName='Action & Adventure'">
+                        <input type="radio" name="genderFilter" id="genderFilter3" autocomplete="off">Action
+                    </label>
+                    <label class="btn btn-default active" ng-click="myFilter={wrapperType:myFilter.wrapperType}">
+                        <input type="radio" name="genderFilter" id="genderFilter4" autocomplete="off" checked>None
+                    </label>
+                </div>
 
-            <ng-pluralize count="searchResults[0].resultCount" when="{'0': 'No results', 'one': '1 result', 'other': '{} results'}"></ng-pluralize>
+                <dir-pagination-controls max-size="7" boundary-links="true" template-url="views/pagination.html"></dir-pagination-controls>
 
-            <dir-pagination-controls max-size="7" boundary-links="true" template-url="views/pagination.html"></dir-pagination-controls>
-
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Title</th>
-                    <th>Watchlist</th>
-                </tr>
-
-                <tr dir-paginate="result in searchResults[0].results | itemsPerPage: pageSize" current-page="currentPage">
-                    <td>
-                        <div class="artwork">
-                            <img ng-src="{{result.artworkUrl100}}">
+                <div class="text-center">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="well">Titre</div>
                         </div>
-                    </td>
-                    <td>
+                        <div class="col-md-4">
+                            <div class="well">watchlist</div>
+                        </div>
+                    </div>
+                    <div class="row" dir-paginate="result in searchResults[0].results | filter:myFilter | itemsPerPage: pageSize" current-page="currentPage">
                         <div ng-switch on="result.wrapperType">
-                            <a ng-switch-when="collection" ui-sref="tvshow({seasonId: result.trackId})">
-                                {{result.collectionName}}
+                            <a ng-switch-when="collection">
+                                <resultdetailstvshow></resultdetailstvshow>
                             </a>
-                            <a ng-switch-when="track" ui-sref="movie({movieId: result.trackId})">
-                                {{result.trackName}}
+                            <a ng-switch-when="track">
+                                <resultdetailsmovie></resultdetailsmovie>
+                            </a>
+                            <a ng-switch-when="artist">
+                                <resultdetailsartist></resultdetailsartist>
                             </a>
                             <a ng-switch-default>
-                                ERROR
+                            ERROR
                             </a>
                         </div>
-                    </td>
-                    <td>{{result.trackId}}</td>
-                </tr></tbody>
-            </table>
+                    </div>
+                </div>
+                <dir-pagination-controls max-size="7" boundary-links="true" template-url="views/pagination.html"></dir-pagination-controls>
 
-            <dir-pagination-controls max-size="7" boundary-links="true" template-url="views/pagination.html"></dir-pagination-controls>
+            </div>
 
+            <div>
+                <h1>Users</h1>
+                <ng-pluralize count="searchUsersResults[0].length" when="{'0': 'No user found.', 'one': '1 result', 'other': '{} results'}"></ng-pluralize>
 
+                <div class="media" ng-repeat="user in searchUsersResults[0]">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="img-circle search-user-icon" ng-src="{{getGravatar(user.email)}}">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{user.name}}</h4>
+                        <button type="button" class="btn btn-primary btn-xs">Follow</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

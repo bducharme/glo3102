@@ -6,7 +6,8 @@ angular.module('cornpub')
     $stateProvider
       .state('home', {
         url: '/home',
-        templateUrl: 'views/home.html'
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
       })
       .state('actor', {
         url: '/actor/:actorId',
@@ -61,7 +62,7 @@ angular.module('cornpub')
         controller: 'LogoutCtrl'
       })
       .state('profile', {
-        url: '/profile',
+        url: '/profile/:userId',
         templateUrl: 'views/user/profile.html',
         controller: 'ProfileCtrl',
         resolve: {
