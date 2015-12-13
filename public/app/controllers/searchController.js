@@ -1,5 +1,5 @@
 angular.module('cornpub')
-    .controller('SearchCtrl', function ($scope, SearchService, SearchServiceUser, SearchStringService, md5) {
+    .controller('SearchCtrl', function ($scope, SearchService, SearchServiceUser, SearchStringService, SearchServiceActor, md5) {
         'use strict';
 
         $scope.currentPage = 1;
@@ -14,23 +14,28 @@ angular.module('cornpub')
         var populateResults = function(){
             SearchService.query({
                 q: SearchStringService.searchString,
-                limit: 100,
-                entity: 'movieArtist,movie,tvSeason'
+                limit: 100
             }, function(response) {
-                $scope.searchResults = [];
-                $scope.searchResults.push(response);
+                SearchServiceActor.query({
+                    q: SearchStringService.searchString,
+                    limit: 100
+                }, function(response2) {
+                    $scope.searchResults = [];
+                    response.results = response.results.concat(response2.results);
+                    $scope.searchResults.push(response);
+                });
             });
         };
 
         var populateUsers = function(){
-            SearchServiceUser.query({
-                q: SearchStringService.searchString
-            }, function(response) {
-                $scope.searchUsersResults = [];
-
-                //$scope.user.md5 = md5.createHash(response.email);
-                $scope.searchUsersResults.push(response);
-            });
+            if (SearchStringService.searchString!==''){
+                SearchServiceUser.query({
+                    q: SearchStringService.searchString
+                }, function(response) {
+                    $scope.searchUsersResults = [];
+                    $scope.searchUsersResults.push(response);
+                });
+            }
         };
 
         $scope.$on('search', doSearch);
