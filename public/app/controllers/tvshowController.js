@@ -33,7 +33,7 @@ angular.module('cornpub')
             }, function (episodes) {
                 (episodes.results).forEach(function (episode) {
                     $scope.TVshowEpisodes.push(episode);
-                })
+                });
             });
         };
 
@@ -59,7 +59,7 @@ angular.module('cornpub')
             }, function (preview) {
                 $scope.videoLink = "http://www.youtube.com/embed/" + preview.items[0].id.videoId;
             });
-        }
+        };
 
         $scope.selectEpisode = function (episode) {
             $scope.seasonNameToShow = episode.collectionName;
@@ -69,14 +69,14 @@ angular.module('cornpub')
             $scope.getVideoLink(episode.collectionName + "-" + episode.trackName);
             $scope.cover = episode.artworkUrl100;
             $('#episodeModal').modal('show');
-        }
+        };
 
         $scope.milliToTime = function (timeInMilli) {
             var milliseconds = timeInMilli % 1000;
             var seconds = Math.floor((timeInMilli / 1000) % 60);
             var minutes = Math.floor((timeInMilli / (60 * 1000)) % 60);
             return minutes + ":" + seconds;
-        }
+        };
     })
 
     .controller('TVShowPreviewController', function ($scope, title, videoLink) {

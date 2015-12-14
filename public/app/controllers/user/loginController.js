@@ -12,5 +12,5 @@ angular.module('cornpub')
             "loginError" : 'Wrong email and/or password'
           };
         });
-    }
+    };
   });

@@ -86,7 +86,7 @@ angular.module('cornpub')
               if(f.id === friend.id) {
                 isFriend = true;
               }
-            })
+            });
           }
           return isFriend;
         };

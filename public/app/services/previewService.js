@@ -8,7 +8,7 @@ angular.module('cornpub')
                     params: {part: 'snippet', mediaName: '@mediaName', key: 'AIzaSyDnPPr6ygLS7nY2YQ7aaMvk47l2OfFNHZI'},
                     skipAuthorization: true
                 }
-            })
+            });
     })
     .filter('trustThisUrl', ['$sce', function($sce) {
         return function(val) {

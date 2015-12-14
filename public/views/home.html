@@ -6,36 +6,8 @@
         <div class="col col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
             <h1>CornPub is the easiest way to find movies and tv shows online.</h1>
             <h4 class="gray">Start browsing CornPub.</h4>
-            <a class="btn btn-primary btn-lg" ui-sref="home">Sign Up Now!</a>
-            <a class="btn btn-default btn-outline btn-lg" ui-sref="home">Browse</a>
-
-            <h4 class="gray">Movies</h4>
-
-          <div class="list-group">
-            <a ui-sref="movie({ movieId: 545892907 })" class="list-group-item">Titanic</a>
-            <a ui-sref="movie({ movieId: 315584649 })" class="list-group-item">Wayne's World</a>
-            <a ui-sref="movie({ movieId: 975793398 })" class="list-group-item">Star Wars: The Empire Strikes Back</a>
-          </div>
-
-          <h4 class="gray">TV Shows</h4>
-
-          <div class="list-group">
-            <a ui-sref="tvshow({ seasonId: 278750007 })" class="list-group-item">Rome</a>
-            <a ui-sref="tvshow({ seasonId: 190066649 })" class="list-group-item">Grey's Anatomy</a>
-          </div>
-
-          <h4 class="gray">Actor</h4>
-
-          <div class="list-group">
-            <a ui-sref="actor({ actorId: 95221335 })" class="list-group-item">Joaquim Phoenix</a>
-            <a ui-sref="actor({ actorId: 2082973 })" class="list-group-item">Scarlett Johansson</a>
-          </div>
-
-          <h4 class="gray">Users</h4>
-
-          <div class="list-group" ng-repeat="user in users">
-            <a ui-sref="profile({ userId: user.id })" class="list-group-item">{{user.name}}</a>
-          </div>
+            <a class="btn btn-primary btn-lg" ui-sref="signup">Sign Up Now!</a>
+            <a class="btn btn-default btn-outline btn-lg" ui-sref="search">Search</a>
 
         </div>
     </div>
