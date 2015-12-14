@@ -82,7 +82,8 @@
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading" ui-sref="profile({userId: user.id})">{{user.name}}</h4>
-                        <button type="button" class="btn btn-primary btn-xs">Follow</button>
+                        <button ng-show="!isFriend(following, user)" type="button" ng-click="addFriend(user)" class="btn btn-info">Follow {{user.name}}</button>
+                        <button ng-show="isFriend(following, user)" type="button" ng-click="removeFriend(user)" class="btn btn-danger">Unfollow {{user.name}}</button>
                     </div>
                 </div>
             </div>

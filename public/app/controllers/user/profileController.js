@@ -1,5 +1,5 @@
 angular.module('cornpub')
-  .controller('ProfileCtrl', function ($scope, $stateParams, UsersFactory, FriendFactory, $timeout) {
+  .controller('ProfileCtrl', function($scope, $stateParams, UsersFactory, FriendFactory, $timeout) {
     'use strict';
 
     $scope.following = [];

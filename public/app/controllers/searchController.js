@@ -1,5 +1,5 @@
 angular.module('cornpub')
-    .controller('SearchCtrl', function ($scope, SearchService, SearchServiceUser, SearchStringService, SearchServiceActor, md5) {
+    .controller('SearchCtrl', function($scope, FriendFactory, SearchService, SearchServiceUser, SearchStringService, SearchServiceActor, md5) {
         'use strict';
 
         $scope.currentPage = 1;
@@ -48,8 +48,54 @@ angular.module('cornpub')
 
         $scope.getGravatar = function(email){
             return 'http://www.gravatar.com/avatar/'+md5.createHash(email);
-        }
-    }).directive('resultdetailsmovie', function() {
+        };
+
+
+        $scope.following = [];
+
+        $scope.$on('user', function (event, user) {
+          $scope.user = user;
+          $scope.me = user;
+          $scope.following = $scope.me.following;
+        });
+
+        $scope.addFriend = function(user) {
+          FriendFactory.save({
+            id: user.id
+          }, function () {
+            $scope.following.unshift(user);
+          });
+        };
+
+        $scope.removeFriend = function (friend) {
+          FriendFactory.remove({
+            id: friend.id
+          }, function () {
+            var toRemove = $scope.following.filter(function(user) {
+              return user.id == $scope.user.id;
+            })[0];
+            var index = $scope.following.indexOf(toRemove);
+            $scope.following.splice(index, 1);
+          });
+        };
+
+        $scope.isFriend = function(friends, friend) {
+          var isFriend = false;
+          if (friends !== undefined) {
+            friends.forEach(function (f) {
+              if(f.id === friend.id) {
+                isFriend = true;
+              }
+            })
+          }
+          return isFriend;
+        };
+
+
+
+
+
+  }).directive('resultdetailsmovie', function() {
         return {
             templateUrl: function(){
                 return 'template/result-details-movie.html';
