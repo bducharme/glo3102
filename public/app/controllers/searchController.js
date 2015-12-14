@@ -27,17 +27,6 @@ angular.module('cornpub')
             });
         };
 
-        var populateResults = function(){
-          SearchService.query({
-            q: SearchStringService.searchString,
-            limit: 100
-          }, function(response) {
-              $scope.searchResults = [];
-              response.results = response.results.concat(response.results);
-              $scope.searchResults.push(response);
-            });
-        };
-
         var populateUsers = function(){
             if (SearchStringService.searchString!==''){
                 SearchServiceUser.query({

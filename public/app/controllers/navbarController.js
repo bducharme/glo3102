@@ -15,4 +15,11 @@ angular.module('cornpub')
             $scope.$emit('user', $scope.user);
           });
         }
+
+
+
+
+
+
+
     });
