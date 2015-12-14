@@ -12,7 +12,7 @@ angular.module('cornpub')
         $scope.openPreview = function () {
           $uibModal.open({
             templateUrl: 'template/preview-modal.html',
-            controller: 'Instance',
+            controller: 'previewController',
             resolve: {
               movie: function () {
                 return $scope.movie;
@@ -45,9 +45,7 @@ angular.module('cornpub')
         }
     })
 
-  .controller('Instance', function ($scope, movie, videoLink) {
+  .controller('previewController', function ($scope, movie, videoLink) {
     $scope.movie = movie;
     $scope.videoLink = videoLink;
   });
-
-
