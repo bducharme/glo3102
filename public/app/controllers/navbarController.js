@@ -1,5 +1,5 @@
 angular.module('cornpub')
-    .controller('NavbarCtrl', function ($timeout, $rootScope, $scope, $auth, SearchStringService, Account, md5) {
+    .controller('NavbarCtrl', function ($http, baseURL, $timeout, $rootScope, $scope, $auth, SearchStringService, SearchService, SearchServiceActor, Account, md5) {
         'use strict';
 
         $scope.SearchStringService = SearchStringService;
@@ -16,10 +16,25 @@ angular.module('cornpub')
           });
         }
 
+    var response3;
 
-
-
-
-
+    $scope.getMovies = function() {
+      return $http.get(baseURL + '/search', {
+        params: {
+          q: SearchStringService.searchString
+        }
+      }).then(function(response){
+        response3 = response;
+        return $http.get(baseURL + '/search/actors', {
+          params: {
+            q: SearchStringService.searchString
+          }
+        }).then(function(response2){
+            return (response3.data.results.concat(response2.data.results)).map(function (data) {
+               return data.trackName || data.artistName;
+            });
+          });
+        });
+      };
 
     });
