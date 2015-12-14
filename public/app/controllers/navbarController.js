@@ -31,7 +31,6 @@ angular.module('cornpub')
           }
         }).then(function(response2){
             return (response3.data.results.concat(response2.data.results)).map(function (data) {
-               console.log(data.trackName || data.artistName);
                return data.trackName || data.artistName;
             });
           });
