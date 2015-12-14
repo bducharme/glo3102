@@ -5,6 +5,10 @@ angular.module('cornpub')
         $scope.currentPage = 1;
         $scope.pageSize = 10;
 
+        $scope.$on('user', function (event, user) {
+            $scope.user = user;
+        });
+
         var doSearch = function(){
             $scope.currentPage = 1;
             populateResults();
