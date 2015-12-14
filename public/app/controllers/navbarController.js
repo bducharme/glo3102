@@ -9,13 +9,13 @@ angular.module('cornpub')
         };
 
         $scope.getAllTitle = function () {
-            return SearchService.get({
+            var temp = SearchService.get({
                 q: SearchStringService.searchString
             }, function (response) {
-                return response.results.map(function (result) {
-                    return result.trackName || result.artistName;
-                })
+                return response.results;
             });
+            console.log(temp);
+            return temp;
         };
 
         if ($auth.isAuthenticated()) {
