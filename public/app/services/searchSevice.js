@@ -17,7 +17,6 @@ angular.module('cornpub')
             get: { method: 'GET' }
         });
     })
-
     .service('SearchStringService', [function () {
         this.searchString = "";
     }]);
