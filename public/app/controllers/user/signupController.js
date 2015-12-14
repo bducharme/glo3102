@@ -9,8 +9,8 @@ angular.module('cornpub')
         }).catch(function(response) {
           $scope.serverErrors = {
             "emailTaken": response.data
-          }
-        })
-    }
+          };
+        });
+    };
   });
 

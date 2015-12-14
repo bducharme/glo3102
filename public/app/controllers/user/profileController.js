@@ -18,7 +18,7 @@ angular.module('cornpub')
       UsersFactory.get({
           id: $stateParams.userId
         }, function (user) {
-          $scope.user = user
+          $scope.user = user;
         }
       );
     }
@@ -50,7 +50,7 @@ angular.module('cornpub')
           if(friend.id === $scope.user.id) {
             isFriend = true;
           }
-        })
+        });
       }
       return isFriend;
     };

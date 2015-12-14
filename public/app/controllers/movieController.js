@@ -42,7 +42,7 @@ angular.module('cornpub')
             }, function (preview) {
                 $scope.videoLink = "http://www.youtube.com/embed/" + preview.items[0].id.videoId;
             });
-        }
+        };
     })
 
   .controller('previewController', function ($scope, movie, videoLink) {
