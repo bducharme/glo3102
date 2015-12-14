@@ -14,7 +14,12 @@
             <form class="navbar-form navbar-left" role="search" method="get">
                 <div>
                     <div class="input-group">
-                        <input name="q" type="text" ng-model="SearchStringService.searchString" class="form-control" placeholder="Search..."/>
+
+                      <input name="q" type="text" ng-model="SearchStringService.searchString" class="form-control" placeholder="Search..."
+                             uib-typeahead="trackName for trackName in getMovies($viewValue)" typeahead-wait-ms="10" class="form-control">
+
+
+
                         <div class="input-group-btn">
                             <button type="submit" class="btn btn-default" ng-click="$emit('search')" ui-sref="search">
                                 <span class="glyphicon glyphicon-search"></span>
