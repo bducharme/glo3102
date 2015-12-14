@@ -38,9 +38,9 @@ angular.module('cornpub')
         };
 
         $scope.openPreview = function () {
-            $scope.videoLink = $scope.getVideoLink($scope.TVshowInfo.artistName);
+            $scope.getVideoLink($scope.TVshowInfo.artistName);
             $uibModal.open({
-                templateUrl: 'Template/preview-modal.html',
+                templateUrl: 'template/preview-modal.html',
                 controller: 'TVShowPreviewController',
                 resolve: {
                     title: function () {
