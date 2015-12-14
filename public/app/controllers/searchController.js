@@ -1,9 +1,17 @@
 angular.module('cornpub')
-    .controller('SearchCtrl', function ($scope, SearchService, SearchServiceUser, SearchStringService, SearchServiceActor, md5) {
+    .controller('SearchCtrl', function ($scope, FriendFactory, SearchService, SearchServiceUser, SearchStringService, SearchServiceActor, md5) {
         'use strict';
 
         $scope.currentPage = 1;
         $scope.pageSize = 10;
+
+        $scope.follow = function(id) {
+          FriendFactory.save({
+            id: id
+          }, function () {
+           // $scope.following.unshift($scope.user);
+          });
+        };
 
         var doSearch = function(){
             $scope.currentPage = 1;
@@ -24,6 +32,17 @@ angular.module('cornpub')
                     response.results = response.results.concat(response2.results);
                     $scope.searchResults.push(response);
                 });
+            });
+        };
+
+        var populateResults = function(){
+          SearchService.query({
+            q: SearchStringService.searchString,
+            limit: 100
+          }, function(response) {
+              $scope.searchResults = [];
+              response.results = response.results.concat(response.results);
+              $scope.searchResults.push(response);
             });
         };
 

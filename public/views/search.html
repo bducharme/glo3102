@@ -82,7 +82,7 @@
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading" ui-sref="profile({userId: user.id})">{{user.name}}</h4>
-                        <button type="button" class="btn btn-primary btn-xs">Follow</button>
+                        <button type="button" ng-click="follow(user.id)" class="btn btn-primary btn-xs">Follow</button>
                     </div>
                 </div>
             </div>

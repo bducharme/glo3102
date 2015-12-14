@@ -1,5 +1,5 @@
 angular.module('cornpub')
-    .controller('NavbarCtrl', function ($scope, $auth, SearchStringService, Account, md5) {
+    .controller('NavbarCtrl', function ($timeout, $rootScope, $scope, $auth, SearchStringService, Account, md5) {
         'use strict';
 
         $scope.SearchStringService = SearchStringService;
